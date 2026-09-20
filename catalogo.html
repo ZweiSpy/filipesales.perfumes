@@ -116,10 +116,10 @@
 
   <!-- Navigation Header -->
   <header class="sticky top-0 z-40 backdrop-blur-md bg-noir-950/90 border-b border-white/5 transition-all">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
       
       <!-- Back to Landing Page -->
-      <a href="index.html" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-noir-900 border border-white/10 hover:border-gold-500/40 text-xs sm:text-sm font-semibold text-gray-300 hover:text-gold-300 transition">
+      <a href="index.html" class="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-xl bg-noir-900 border border-white/10 hover:border-gold-500/40 text-xs sm:text-sm font-semibold text-gray-300 hover:text-gold-300 transition">
         <i class="fa-solid fa-arrow-left text-xs text-gold-400"></i>
         <span class="hidden sm:inline">Voltar para Início</span>
         <span class="sm:hidden">Início</span>
@@ -127,16 +127,16 @@
 
       <!-- Brand Logo -->
       <div class="text-center">
-        <a href="index.html" class="font-display tracking-[0.2em] text-lg sm:text-2xl font-black text-gold-gradient block">
+        <a href="index.html" class="font-display tracking-[0.2em] text-base sm:text-2xl font-black text-gold-gradient block">
           FILIPE SALES
         </a>
-        <span class="text-[9px] sm:text-[10px] uppercase tracking-widest text-gray-400 block font-light">
+        <span class="text-[8px] sm:text-[10px] uppercase tracking-widest text-gray-400 block font-light">
           Catálogo Oficial • Linha Bortoletto
         </span>
       </div>
 
       <!-- Quick WhatsApp Contact -->
-      <a href="#" target="_blank" rel="noopener noreferrer" id="headerWaBtn" class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-full shadow-lg transition transform active:scale-95">
+      <a href="#" target="_blank" rel="noopener noreferrer" id="headerWaBtn" class="inline-flex items-center gap-1.5 sm:gap-2 bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white text-xs sm:text-sm font-bold px-3 sm:px-4 py-2 sm:py-2.5 rounded-full shadow-lg transition transform active:scale-95">
         <i class="fa-brands fa-whatsapp text-base"></i>
         <span class="hidden md:inline">Falar com Filipe</span>
         <span class="md:hidden">WhatsApp</span>
@@ -146,7 +146,7 @@
   </header>
 
   <!-- Catalog Hero Section -->
-  <section class="relative py-12 lg:py-16 overflow-hidden border-b border-white/5 bg-gradient-to-b from-noir-950 via-noir-900 to-noir-950">
+  <section class="relative py-10 lg:py-16 overflow-hidden border-b border-white/5 bg-gradient-to-b from-noir-950 via-noir-900 to-noir-950">
     <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold-500/10 via-transparent to-transparent pointer-events-none"></div>
 
     <div class="max-w-5xl mx-auto px-4 text-center relative z-10 space-y-4">
@@ -181,8 +181,8 @@
   </section>
 
   <!-- Interactive Search & Filter Controls -->
-  <section class="sticky top-20 z-30 backdrop-blur-lg bg-noir-950/95 border-b border-white/10 py-4 shadow-xl">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+  <section class="sticky top-16 sm:top-20 z-30 backdrop-blur-lg bg-noir-950/95 border-b border-white/10 py-3 sm:py-4 shadow-xl">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 space-y-3 sm:space-y-4">
       
       <!-- Live Search Bar -->
       <div class="relative max-w-2xl mx-auto">
@@ -193,7 +193,7 @@
           type="text" 
           id="catalogSearch" 
           placeholder="Busque por perfume, inspiração (ex: Dior, 212, Lattafa) ou família..."
-          class="w-full pl-11 pr-10 py-3.5 rounded-2xl bg-noir-900 border border-white/15 focus:border-gold-500/80 focus:ring-2 focus:ring-gold-500/20 text-white text-sm placeholder-gray-500 transition shadow-inner outline-none"
+          class="w-full pl-11 pr-10 py-3 sm:py-3.5 rounded-2xl bg-noir-900 border border-white/15 focus:border-gold-500/80 focus:ring-2 focus:ring-gold-500/20 text-white text-sm placeholder-gray-500 transition shadow-inner outline-none"
         >
         <button 
           type="button" 
@@ -206,32 +206,32 @@
       </div>
 
       <!-- Gender Tabs & Counters -->
-      <div class="flex items-center justify-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+      <div class="flex items-center justify-start sm:justify-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 scrollbar-none px-1 sm:px-0">
         <button 
           onclick="filterGender('todos')" 
           id="tab-todos" 
-          class="gender-tab active px-5 py-2 rounded-full text-xs font-bold border transition bg-gold-500 text-noir-950 border-gold-400 shadow-md whitespace-nowrap"
+          class="gender-tab active px-4 sm:px-5 py-1.5 sm:py-2 rounded-full text-xs font-bold border transition bg-gold-500 text-noir-950 border-gold-400 shadow-md whitespace-nowrap"
         >
           Todos <span class="ml-1 opacity-80" id="count-todos">(62)</span>
         </button>
         <button 
           onclick="filterGender('feminino')" 
           id="tab-feminino" 
-          class="gender-tab px-5 py-2 rounded-full text-xs font-bold border transition bg-noir-900 text-gray-300 border-white/10 hover:border-gold-500/40 hover:text-white whitespace-nowrap"
+          class="gender-tab px-4 sm:px-5 py-1.5 sm:py-2 rounded-full text-xs font-bold border transition bg-noir-900 text-gray-300 border-white/10 hover:border-gold-500/40 hover:text-white whitespace-nowrap"
         >
           Femininos <span class="ml-1 opacity-80" id="count-feminino">(32)</span>
         </button>
         <button 
           onclick="filterGender('masculino')" 
           id="tab-masculino" 
-          class="gender-tab px-5 py-2 rounded-full text-xs font-bold border transition bg-noir-900 text-gray-300 border-white/10 hover:border-gold-500/40 hover:text-white whitespace-nowrap"
+          class="gender-tab px-4 sm:px-5 py-1.5 sm:py-2 rounded-full text-xs font-bold border transition bg-noir-900 text-gray-300 border-white/10 hover:border-gold-500/40 hover:text-white whitespace-nowrap"
         >
           Masculinos <span class="ml-1 opacity-80" id="count-masculino">(30)</span>
         </button>
       </div>
 
       <!-- Quick Tag Filter Pills -->
-      <div class="flex items-center justify-center gap-1.5 overflow-x-auto pb-1 text-[11px]">
+      <div class="flex items-center justify-start md:justify-center gap-1.5 overflow-x-auto pb-1.5 px-1 md:px-0 text-[11px] scrollbar-none">
         <button onclick="filterTag('', this)" class="tag-pill px-3 py-1 rounded-lg bg-gold-500 text-noir-950 font-bold border border-gold-400 transition whitespace-nowrap">Todas as Categorias</button>
         <button onclick="filterTag('Bestseller', this)" class="tag-pill px-3 py-1 rounded-lg bg-noir-900 border border-white/10 text-gray-300 hover:text-gold-300 hover:border-gold-500/30 transition whitespace-nowrap">⭐ Bestsellers</button>
         <button onclick="filterTag('Árabe', this)" class="tag-pill px-3 py-1 rounded-lg bg-noir-900 border border-white/10 text-gray-300 hover:text-gold-300 hover:border-gold-500/30 transition whitespace-nowrap">🌿 Árabes / Lattafa</button>
@@ -351,11 +351,11 @@
       const card = btnEl.closest('.perfume-catalog-card');
       if (card) {
         card.querySelectorAll('.size-btn').forEach(btn => {
-          btn.classList.remove('bg-gold-500', 'text-noir-950', 'border-gold-400');
+          btn.classList.remove('bg-gold-500', 'text-noir-950', 'border-gold-400', 'shadow-sm');
           btn.classList.add('bg-noir-800', 'text-gray-300', 'border-white/10');
         });
         btnEl.classList.remove('bg-noir-800', 'text-gray-300', 'border-white/10');
-        btnEl.classList.add('bg-gold-500', 'text-noir-950', 'border-gold-400');
+        btnEl.classList.add('bg-gold-500', 'text-noir-950', 'border-gold-400', 'shadow-sm');
 
         // Update bottle size label
         const sizeBadge = card.querySelector('.selected-size-badge');
@@ -585,18 +585,18 @@
             <div class="mt-5 pt-3 border-t border-white/10">
               <div class="flex items-center justify-between mb-2.5 text-xs">
                 <span class="text-gray-400 text-[11px]">Frasco:</span>
-                <div class="flex gap-1">
+                <div class="flex gap-1.5">
                   <button 
                     type="button" 
                     onclick="selectSize('${perfume.id}', '100ml', this)" 
-                    class="size-btn px-2.5 py-0.5 rounded text-[10px] font-bold ${size === '100ml' ? 'bg-gold-500 text-noir-950 border-gold-400' : 'bg-noir-800 text-gray-300 border-white/10'} border transition"
+                    class="size-btn px-3 py-1 min-h-[30px] rounded-lg text-xs font-bold ${size === '100ml' ? 'bg-gold-500 text-noir-950 border-gold-400 shadow-sm' : 'bg-noir-800 text-gray-300 border-white/10'} border transition"
                   >
                     100ml
                   </button>
                   <button 
                     type="button" 
                     onclick="selectSize('${perfume.id}', '15ml', this)" 
-                    class="size-btn px-2.5 py-0.5 rounded text-[10px] font-bold ${size === '15ml' ? 'bg-gold-500 text-noir-950 border-gold-400' : 'bg-noir-800 text-gray-300 border-white/10'} border transition"
+                    class="size-btn px-3 py-1 min-h-[30px] rounded-lg text-xs font-bold ${size === '15ml' ? 'bg-gold-500 text-noir-950 border-gold-400 shadow-sm' : 'bg-noir-800 text-gray-300 border-white/10'} border transition"
                   >
                     15ml
                   </button>

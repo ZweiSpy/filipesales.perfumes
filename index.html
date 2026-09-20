@@ -191,11 +191,61 @@
         <a href="#duvidas" class="hover:text-gold-300 transition-colors">Dúvidas</a>
       </nav>
 
-      <!-- Action Button -->
-      <div class="flex items-center gap-3">
-        <a href="#" target="_blank" rel="noopener noreferrer" class="dynamic-wa-btn inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-500 hover:to-green-400 text-white font-semibold text-xs sm:text-sm px-4 sm:px-5 py-2.5 rounded-full shadow-lg hover:shadow-green-500/25 transition-all transform hover:-translate-y-0.5">
+      <!-- Action Button & Mobile Hamburger Toggle -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="#" target="_blank" rel="noopener noreferrer" class="dynamic-wa-btn inline-flex items-center gap-1.5 sm:gap-2 bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-500 hover:to-green-400 text-white font-semibold text-xs sm:text-sm px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full shadow-lg hover:shadow-green-500/25 transition-all transform hover:-translate-y-0.5">
           <i class="fa-brands fa-whatsapp text-base"></i>
           <span class="hidden sm:inline">Chamar no</span> WhatsApp
+        </a>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button 
+          id="mobileMenuBtn" 
+          onclick="toggleMobileMenu()" 
+          aria-label="Menu de navegação" 
+          class="md:hidden w-10 h-10 rounded-xl bg-noir-900 border border-gold-500/30 text-gold-400 hover:text-white hover:border-gold-400 flex items-center justify-center transition"
+        >
+          <i id="mobileMenuIcon" class="fa-solid fa-bars text-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Overlay & Panel -->
+    <div id="mobileMenu" class="hidden md:hidden bg-noir-950/98 border-b border-gold-500/30 px-6 py-5 shadow-2xl transition-all">
+      <div class="flex flex-col space-y-3.5 text-xs font-semibold tracking-wider uppercase">
+        <a href="#hero" onclick="closeMobileMenu()" class="text-gray-300 hover:text-gold-300 py-2 border-b border-white/5 flex items-center justify-between">
+          <span>Início</span>
+          <i class="fa-solid fa-chevron-right text-[10px] text-gold-500/50"></i>
+        </a>
+        <a href="#catalogo" onclick="closeMobileMenu()" class="text-gray-300 hover:text-gold-300 py-2 border-b border-white/5 flex items-center justify-between">
+          <span>Bestsellers</span>
+          <i class="fa-solid fa-chevron-right text-[10px] text-gold-500/50"></i>
+        </a>
+        <a href="catalogo.html" class="py-2.5 px-3.5 rounded-xl bg-gradient-to-r from-gold-500/20 via-gold-500/10 to-transparent border border-gold-500/40 text-gold-300 hover:text-white font-bold flex items-center justify-between">
+          <span class="flex items-center gap-2">
+            <i class="fa-solid fa-gem text-gold-400 text-xs"></i> Catálogo Completo (62)
+          </span>
+          <span class="text-[9px] bg-gold-500 text-noir-950 px-2 py-0.5 rounded font-black tracking-normal">Ver Todos</span>
+        </a>
+        <a href="#tamanhos" onclick="closeMobileMenu()" class="text-gray-300 hover:text-gold-300 py-2 border-b border-white/5 flex items-center justify-between">
+          <span>Frascos 100ml & 15ml</span>
+          <i class="fa-solid fa-chevron-right text-[10px] text-gold-500/50"></i>
+        </a>
+        <a href="#sobre" onclick="closeMobileMenu()" class="text-gray-300 hover:text-gold-300 py-2 border-b border-white/5 flex items-center justify-between">
+          <span>Sobre o Filipe</span>
+          <i class="fa-solid fa-chevron-right text-[10px] text-gold-500/50"></i>
+        </a>
+        <a href="#diferenciais" onclick="closeMobileMenu()" class="text-gray-300 hover:text-gold-300 py-2 border-b border-white/5 flex items-center justify-between">
+          <span>Diferenciais</span>
+          <i class="fa-solid fa-chevron-right text-[10px] text-gold-500/50"></i>
+        </a>
+        <a href="#duvidas" onclick="closeMobileMenu()" class="text-gray-300 hover:text-gold-300 py-2 border-b border-white/5 flex items-center justify-between">
+          <span>Dúvidas Frequentes</span>
+          <i class="fa-solid fa-chevron-right text-[10px] text-gold-500/50"></i>
+        </a>
+        <a href="https://www.instagram.com/filipesales.perfumes/#" target="_blank" rel="noopener noreferrer" class="py-1 text-gray-400 hover:text-pink-400 text-[11px] flex items-center gap-2 pt-1">
+          <i class="fa-brands fa-instagram text-pink-400 text-sm"></i>
+          <span>Instagram @filipesales.perfumes</span>
         </a>
       </div>
     </div>
@@ -488,8 +538,8 @@
             <div class="flex items-center justify-between mb-3 text-xs">
               <span class="text-gray-400 font-medium">Selecione o frasco:</span>
               <div class="flex gap-1">
-                <button type="button" onclick="selectSize(this, '100ml')" class="size-btn px-2.5 py-1 rounded text-[11px] font-bold bg-gold-500 text-noir-950 border border-gold-400 transition">100ml</button>
-                <button type="button" onclick="selectSize(this, '15ml')" class="size-btn px-2.5 py-1 rounded text-[11px] font-bold bg-noir-800 text-gray-300 border border-white/10 hover:border-gold-500/40 transition">15ml</button>
+                <button type="button" onclick="selectSize(this, '100ml')" class="size-btn px-3 py-1.5 min-h-[34px] rounded-lg text-xs font-bold bg-gold-500 text-noir-950 border border-gold-400 transition shadow-sm">100ml</button>
+                <button type="button" onclick="selectSize(this, '15ml')" class="size-btn px-3 py-1.5 min-h-[34px] rounded-lg text-xs font-bold bg-noir-800 text-gray-300 border border-white/10 hover:border-gold-500/40 transition">15ml</button>
               </div>
             </div>
 
@@ -556,8 +606,8 @@
             <div class="flex items-center justify-between mb-3 text-xs">
               <span class="text-gray-400 font-medium">Selecione o frasco:</span>
               <div class="flex gap-1">
-                <button type="button" onclick="selectSize(this, '100ml')" class="size-btn px-2.5 py-1 rounded text-[11px] font-bold bg-gold-500 text-noir-950 border border-gold-400 transition">100ml</button>
-                <button type="button" onclick="selectSize(this, '15ml')" class="size-btn px-2.5 py-1 rounded text-[11px] font-bold bg-noir-800 text-gray-300 border border-white/10 hover:border-gold-500/40 transition">15ml</button>
+                <button type="button" onclick="selectSize(this, '100ml')" class="size-btn px-3 py-1.5 min-h-[34px] rounded-lg text-xs font-bold bg-gold-500 text-noir-950 border border-gold-400 transition shadow-sm">100ml</button>
+                <button type="button" onclick="selectSize(this, '15ml')" class="size-btn px-3 py-1.5 min-h-[34px] rounded-lg text-xs font-bold bg-noir-800 text-gray-300 border border-white/10 hover:border-gold-500/40 transition">15ml</button>
               </div>
             </div>
 
@@ -624,8 +674,8 @@
             <div class="flex items-center justify-between mb-3 text-xs">
               <span class="text-gray-400 font-medium">Selecione o frasco:</span>
               <div class="flex gap-1">
-                <button type="button" onclick="selectSize(this, '100ml')" class="size-btn px-2.5 py-1 rounded text-[11px] font-bold bg-gold-500 text-noir-950 border border-gold-400 transition">100ml</button>
-                <button type="button" onclick="selectSize(this, '15ml')" class="size-btn px-2.5 py-1 rounded text-[11px] font-bold bg-noir-800 text-gray-300 border border-white/10 hover:border-gold-500/40 transition">15ml</button>
+                <button type="button" onclick="selectSize(this, '100ml')" class="size-btn px-3 py-1.5 min-h-[34px] rounded-lg text-xs font-bold bg-gold-500 text-noir-950 border border-gold-400 transition shadow-sm">100ml</button>
+                <button type="button" onclick="selectSize(this, '15ml')" class="size-btn px-3 py-1.5 min-h-[34px] rounded-lg text-xs font-bold bg-noir-800 text-gray-300 border border-white/10 hover:border-gold-500/40 transition">15ml</button>
               </div>
             </div>
 
@@ -692,8 +742,8 @@
             <div class="flex items-center justify-between mb-3 text-xs">
               <span class="text-gray-400 font-medium">Selecione o frasco:</span>
               <div class="flex gap-1">
-                <button type="button" onclick="selectSize(this, '100ml')" class="size-btn px-2.5 py-1 rounded text-[11px] font-bold bg-gold-500 text-noir-950 border border-gold-400 transition">100ml</button>
-                <button type="button" onclick="selectSize(this, '15ml')" class="size-btn px-2.5 py-1 rounded text-[11px] font-bold bg-noir-800 text-gray-300 border border-white/10 hover:border-gold-500/40 transition">15ml</button>
+                <button type="button" onclick="selectSize(this, '100ml')" class="size-btn px-3 py-1.5 min-h-[34px] rounded-lg text-xs font-bold bg-gold-500 text-noir-950 border border-gold-400 transition shadow-sm">100ml</button>
+                <button type="button" onclick="selectSize(this, '15ml')" class="size-btn px-3 py-1.5 min-h-[34px] rounded-lg text-xs font-bold bg-noir-800 text-gray-300 border border-white/10 hover:border-gold-500/40 transition">15ml</button>
               </div>
             </div>
 
@@ -760,8 +810,8 @@
             <div class="flex items-center justify-between mb-3 text-xs">
               <span class="text-gray-400 font-medium">Selecione o frasco:</span>
               <div class="flex gap-1">
-                <button type="button" onclick="selectSize(this, '100ml')" class="size-btn px-2.5 py-1 rounded text-[11px] font-bold bg-gold-500 text-noir-950 border border-gold-400 transition">100ml</button>
-                <button type="button" onclick="selectSize(this, '15ml')" class="size-btn px-2.5 py-1 rounded text-[11px] font-bold bg-noir-800 text-gray-300 border border-white/10 hover:border-gold-500/40 transition">15ml</button>
+                <button type="button" onclick="selectSize(this, '100ml')" class="size-btn px-3 py-1.5 min-h-[34px] rounded-lg text-xs font-bold bg-gold-500 text-noir-950 border border-gold-400 transition shadow-sm">100ml</button>
+                <button type="button" onclick="selectSize(this, '15ml')" class="size-btn px-3 py-1.5 min-h-[34px] rounded-lg text-xs font-bold bg-noir-800 text-gray-300 border border-white/10 hover:border-gold-500/40 transition">15ml</button>
               </div>
             </div>
 
@@ -828,8 +878,8 @@
             <div class="flex items-center justify-between mb-3 text-xs">
               <span class="text-gray-400 font-medium">Selecione o frasco:</span>
               <div class="flex gap-1">
-                <button type="button" onclick="selectSize(this, '100ml')" class="size-btn px-2.5 py-1 rounded text-[11px] font-bold bg-gold-500 text-noir-950 border border-gold-400 transition">100ml</button>
-                <button type="button" onclick="selectSize(this, '15ml')" class="size-btn px-2.5 py-1 rounded text-[11px] font-bold bg-noir-800 text-gray-300 border border-white/10 hover:border-gold-500/40 transition">15ml</button>
+                <button type="button" onclick="selectSize(this, '100ml')" class="size-btn px-3 py-1.5 min-h-[34px] rounded-lg text-xs font-bold bg-gold-500 text-noir-950 border border-gold-400 transition shadow-sm">100ml</button>
+                <button type="button" onclick="selectSize(this, '15ml')" class="size-btn px-3 py-1.5 min-h-[34px] rounded-lg text-xs font-bold bg-noir-800 text-gray-300 border border-white/10 hover:border-gold-500/40 transition">15ml</button>
               </div>
             </div>
 
@@ -890,6 +940,8 @@
                 <img 
                   src="assets/filipe-sales-consultor.jpeg" 
                   alt="Filipe Sales - Consultor de Perfumes Atlântica Natural" 
+                  width="384"
+                  height="480"
                   class="w-full h-full object-cover object-top transition duration-700 group-hover/img:scale-105"
                   loading="lazy"
                 />
@@ -1226,6 +1278,9 @@
           <i class="fa-solid fa-gem text-[10px]"></i> Catálogo Completo (62)
         </a>
         <a href="#sobre" class="hover:text-gold-300 transition">Consultoria</a>
+        <a href="https://www.instagram.com/filipesales.perfumes/#" target="_blank" rel="noopener noreferrer" class="hover:text-rose-400 transition flex items-center gap-1.5">
+          <i class="fa-brands fa-instagram text-rose-400"></i> @filipesales.perfumes
+        </a>
       </div>
 
       <div class="pt-6 border-t border-white/5 text-[11px] text-gray-600">
@@ -1299,9 +1354,9 @@
       const buttons = card.querySelectorAll(".size-btn");
       buttons.forEach(btn => {
         if (btn === buttonElement) {
-          btn.className = "size-btn px-2.5 py-1 rounded text-[11px] font-bold bg-gold-500 text-noir-950 border border-gold-400 transition";
+          btn.className = "size-btn px-3 py-1.5 min-h-[34px] rounded-lg text-xs font-bold bg-gold-500 text-noir-950 border border-gold-400 transition shadow-sm";
         } else {
-          btn.className = "size-btn px-2.5 py-1 rounded text-[11px] font-bold bg-noir-800 text-gray-300 border border-white/10 hover:border-gold-500/40 transition";
+          btn.className = "size-btn px-3 py-1.5 min-h-[34px] rounded-lg text-xs font-bold bg-noir-800 text-gray-300 border border-white/10 hover:border-gold-500/40 transition";
         }
       });
     }
@@ -1338,6 +1393,34 @@
         }
       });
     }
+
+    // Mobile Navigation Drawer handlers
+    function toggleMobileMenu() {
+      const menu = document.getElementById("mobileMenu");
+      const icon = document.getElementById("mobileMenuIcon");
+      if (!menu || !icon) return;
+      if (menu.classList.contains("hidden")) {
+        menu.classList.remove("hidden");
+        icon.className = "fa-solid fa-xmark text-lg text-gold-300";
+      } else {
+        menu.classList.add("hidden");
+        icon.className = "fa-solid fa-bars text-lg";
+      }
+    }
+
+    function closeMobileMenu() {
+      const menu = document.getElementById("mobileMenu");
+      const icon = document.getElementById("mobileMenuIcon");
+      if (menu) menu.classList.add("hidden");
+      if (icon) icon.className = "fa-solid fa-bars text-lg";
+    }
+
+    // Close mobile menu automatically on screen rotation/resize
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 768) {
+        closeMobileMenu();
+      }
+    });
   </script>
 </body>
 </html>
