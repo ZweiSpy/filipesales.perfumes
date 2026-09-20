@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <!-- Luxury Gold Linear Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF6D6" />
+      <stop offset="35%" stop-color="#F5D061" />
+      <stop offset="70%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#A45821" />
+    </linearGradient>
+
+    <!-- Dark Luxury Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#181a1e" />
+      <stop offset="100%" stop-color="#060607" />
+    </linearGradient>
+
+    <!-- Shimmer Highlight Gradient -->
+    <linearGradient id="highlight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Container Icon Background with soft rounded border -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#bgGrad)" stroke="url(#goldGrad)" stroke-width="1.8" />
+
+  <!-- Perfume Atomizer Pump / Spray Cap -->
+  <rect x="27" y="10" width="10" height="7" rx="1.5" fill="url(#goldGrad)" />
+  <!-- Nozzle hole -->
+  <circle cx="34" cy="13.5" r="1" fill="#060607" />
+
+  <!-- Neck collar -->
+  <rect x="25" y="17" width="14" height="4" rx="1" fill="url(#goldGrad)" />
+
+  <!-- Glass / Metallic Bottle Body -->
+  <path d="M 18 23 
+           L 46 23 
+           C 49 23, 51 25, 51 28 
+           L 49 49 
+           C 49 53, 46 55, 42 55 
+           L 22 55 
+           C 18 55, 15 53, 15 49 
+           L 13 28 
+           C 13 25, 15 23, 18 23 Z" 
+        fill="url(#goldGrad)" />
+
+  <!-- Bottle Core / Inner Dark Window for luxury contrast -->
+  <rect x="21" y="28" width="22" height="21" rx="4" fill="#0c0d0e" opacity="0.85" />
+
+  <!-- Gold Emblem 'FS' Monogram inside core -->
+  <text x="32" y="43" font-family="'Georgia', serif" font-size="11" font-weight="bold" fill="url(#goldGrad)" text-anchor="middle" letter-spacing="1">FS</text>
+
+  <!-- Glossy Diagonal Reflection Stripe -->
+  <path d="M 17 25 L 24 25 L 19 53 L 15 49 Z" fill="url(#highlight)" opacity="0.4" />
+
+  <!-- Star Sparkle at Top Right -->
+  <path d="M 48 10 Q 48 14 52 14 Q 48 14 48 18 Q 48 14 44 14 Q 48 14 48 10 Z" fill="#FFF6D6" />
+</svg>
