@@ -39,7 +39,7 @@ filipesales.perfumes/
 ├── SDD.md                            # Software Design Document (Especificação Técnica)
 ├── README.md                         # Documentação central do repositório
 ├── .gitignore                        # Filtros de arquivos temporários e de ambiente
-└── landing_page_filipe_sales_perfumes.html # Aplicação principal (Landing Page)
+└── index.html                        # Aplicação principal (Landing Page de Entrada)
 ```
 
 ---
@@ -55,7 +55,7 @@ Como a aplicação adota arquitetura estática leve, nenhuma etapa de compilaç�
    ```
 
 2. **Abrir a Aplicação:**
-   - **Opção A:** Dê um duplo clique no arquivo `landing_page_filipe_sales_perfumes.html` para abrir diretamente em qualquer navegador moderno.
+   - **Opção A:** Dê um duplo clique no arquivo `index.html` para abrir diretamente em qualquer navegador moderno.
    - **Opção B (Recomendada via VS Code):** Utilize a extensão **Live Server** para recarregamento automático em `http://localhost:5500`.
 
 ---

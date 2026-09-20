@@ -28,7 +28,7 @@ Este documento acompanha a evolução do produto desde a concepção de requisit
 ## 📝 Detalhamento das Entregas por Fase
 
 ### ✅ Fase 1: Diagnóstico, Governança & Especificação (Concluída)
-- [x] Leitura e auditoria completa de `landing_page_filipe_sales_perfumes.html`.
+- [x] Leitura e auditoria completa de `index.html` (antigo `landing_page_filipe_sales_perfumes.html`).
 - [x] Levantamento de todos os 13 pontos de contato de conversão via WhatsApp.
 - [x] Elaboração do documento oficial de Governança ([AGENTS.md](AGENTS.md)) com Matriz RACI e regras estritas de não duplicação e aprovação prévia.
 - [x] Redação do Documento de Design de Software ([SDD.md](SDD.md)).
