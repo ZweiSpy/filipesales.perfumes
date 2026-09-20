@@ -2,8 +2,8 @@
 
 **Projeto:** Landing Page de Alta Conversão - Filipe Sales Perfumes (Atlântica Natural)  
 **Metodologia:** Spec-Driven Development (SDD) & Governança Contínua  
-**Versão:** 1.1.0  
-**Data da Última Atualização:** 19/09/2026  
+**Versão:** 1.2.0  
+**Data da Última Atualização:** 20/09/2026  
 
 ---
 
@@ -22,8 +22,8 @@ Este documento acompanha a evolução do produto desde a concepção de requisit
 | **Fase 3** | Integração dos dados homologados (WhatsApp oficial, Instagram e foto executiva Opção A) | **CONCLUÍDO** | Antigravity |
 | **Fase 4** | **Identidade & Compartilhamento:** Favicon oficial, Open Graph e Meta Tags de SEO (`assets/`) | **CONCLUÍDO** | Antigravity |
 | **Fase 5** | **Refinamento de Conteúdo & Credibilidade:** Remoção de 24h por "Alta Fixação", Inspirações Olfativas e FAQ Selo Bortoletto | **CONCLUÍDO** | Antigravity |
-| **Fase 6** | **Expansão do Catálogo (+62 perfumes):** Implementação da arquitetura homologada (Página Própria vs Carregar Mais) | **EM DEFINIÇÃO DE ARQUITETURA** | Antigravity / PO |
-| **Fase 7** | Execução de testes cruzados de ponta a ponta e homologação formal pelo PO | **AGUARDANDO** | PO (ZweiSpy) |
+| **Fase 6** | **Expansão do Catálogo (+62 perfumes):** Implementação da arquitetura homologada (Página Satélite Dedicada `catalogo.html` + Live Search) | **CONCLUÍDO** | Antigravity / PO |
+| **Fase 7** | Execução de testes cruzados de ponta a ponta e homologação formal pelo PO | **EM HOMOLOGAÇÃO** | PO (ZweiSpy) |
 | **Fase 8** | Otimizações futuras: Prova social ao vivo, WebP, selo regional e Analytics | **BACKLOG PRIORIZADO** | Antigravity / PO |
 
 ---
