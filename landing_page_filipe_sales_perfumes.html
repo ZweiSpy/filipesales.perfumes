@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filipe Sales | Perfumes Exclusivos - Atlântica Natural</title>
+  
+  <!-- Fonts: Cinzel & Playfair for luxury titles, Montserrat for clean readability -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            noir: {
+              950: '#060607',
+              900: '#0c0d0e',
+              850: '#121316',
+              800: '#181a1e',
+              700: '#23262d',
+            },
+            gold: {
+              100: '#FFF6D6',
+              200: '#FDECB1',
+              300: '#F5D061',
+              400: '#E6BC3C',
+              500: '#D4AF37', // Classic metallic gold
+              600: '#AA820A',
+              700: '#856404',
+            },
+            bronze: {
+              300: '#E29E65',
+              400: '#D08246',
+              500: '#CD7F32', // Warm metallic bronze
+              600: '#A45821',
+              700: '#6E3B19',
+            }
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Cinzel', 'Georgia', 'serif'],
+            display: ['Cinzel', 'Playfair Display', 'serif'],
+            sans: ['Montserrat', 'system-ui', 'sans-serif'],
+          },
+          backgroundImage: {
+            'gold-gradient': 'linear-gradient(135deg, #FDECB1 0%, #D4AF37 50%, #A45821 100%)',
+            'gold-shimmer': 'linear-gradient(90deg, transparent, rgba(245, 208, 97, 0.25), transparent)',
+            'dark-glass': 'linear-gradient(180deg, rgba(24, 26, 30, 0.75) 0%, rgba(12, 13, 14, 0.9) 100%)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Subtle luxury glow and animations */
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #FFF6D6 0%, #F5D061 30%, #D4AF37 60%, #CD7F32 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .border-gold-glow {
+      box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.25);
+    }
+    
+    .gold-shine-effect {
+      position: relative;
+      overflow: hidden;
+    }
+    .gold-shine-effect::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 40%;
+      height: 200%;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 246, 214, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: rotate(30deg);
+      animation: shine 6s infinite;
+    }
+    
+    @keyframes shine {
+      0% { left: -60%; }
+      20% { left: 140%; }
+      100% { left: 140%; }
+    }
+
+    @keyframes pulseSoft {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(37, 211, 102, 0.4); }
+      50% { transform: scale(1.03); box-shadow: 0 0 35px rgba(37, 211, 102, 0.7); }
+    }
+    .pulse-whatsapp {
+      animation: pulseSoft 2.5s infinite ease-in-out;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0c0d0e;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #332812;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #D4AF37;
+    }
+  </style>
+</head>
+<body class="bg-noir-950 text-gray-200 font-sans antialiased selection:bg-gold-500 selection:text-noir-950 min-h-screen flex flex-col">
+
+  <!-- Top Luxury Urgency Bar -->
+  <aside aria-label="Aviso de promoção" class="bg-gradient-to-r from-noir-900 via-bronze-700/60 to-noir-900 border-b border-gold-500/20 py-2.5 px-4 text-xs md:text-sm text-center font-medium text-gold-200 tracking-wide flex items-center justify-center gap-2 relative z-50">
+    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-gold-500 text-noir-950 uppercase tracking-widest animate-pulse">Exclusivo</span>
+    <p>
+      ✨ Atendimento VIP & Consultoria Olfativa no WhatsApp | Frascos de <strong>100ml</strong> e Pocket de <strong>15ml</strong>
+    </p>
+    <button onclick="openConfigModal()" title="Configurar número do WhatsApp" class="ml-2 text-gold-400 hover:text-white transition-colors underline text-[11px] opacity-80 hover:opacity-100 flex items-center gap-1">
+      <i class="fa-solid fa-gear"></i> <span class="hidden sm:inline">Ajustar Whats</span>
+    </button>
+  </aside>
+
+  <!-- Header / Nav -->
+  <header class="sticky top-0 z-40 bg-noir-950/85 backdrop-blur-md border-b border-white/5 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex flex-col group">
+        <span class="font-display tracking-[0.22em] text-lg sm:text-2xl font-black text-gold-gradient group-hover:brightness-110 transition">
+          FILIPE SALES
+        </span>
+        <span class="text-[9px] sm:text-[10px] uppercase tracking-[0.38em] text-bronze-300 font-semibold flex items-center gap-1.5">
+          <span class="inline-block w-1.5 h-1.5 rounded-full bg-gold-500"></span>
+          Perfumes Atlântica Natural
+        </span>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden md:flex items-center space-x-8 text-xs lg:text-sm font-medium tracking-wider uppercase text-gray-300">
+        <a href="#catalogo" class="hover:text-gold-300 transition-colors">Coleções</a>
+        <a href="#tamanhos" class="hover:text-gold-300 transition-colors">100ml & 15ml</a>
+        <a href="#sobre" class="hover:text-gold-300 transition-colors">Sobre Filipe</a>
+        <a href="#diferenciais" class="hover:text-gold-300 transition-colors">Diferenciais</a>
+        <a href="#duvidas" class="hover:text-gold-300 transition-colors">Dúvidas</a>
+      </nav>
+
+      <!-- Action Button -->
+      <div class="flex items-center gap-3">
+        <a href="#" target="_blank" rel="noopener noreferrer" class="dynamic-wa-btn inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-500 hover:to-green-400 text-white font-semibold text-xs sm:text-sm px-4 sm:px-5 py-2.5 rounded-full shadow-lg hover:shadow-green-500/25 transition-all transform hover:-translate-y-0.5">
+          <i class="fa-brands fa-whatsapp text-base"></i>
+          <span class="hidden sm:inline">Chamar no</span> WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative pt-12 pb-20 md:py-28 overflow-hidden bg-noir-950">
+    <!-- Ambient glowing backdrops -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-gradient-to-tr from-gold-600/10 via-bronze-500/15 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -top-10 right-0 w-80 h-80 bg-amber-500/5 rounded-full blur-2xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Hero Copy -->
+        <div class="lg:col-span-7 space-y-7 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-noir-850 border border-gold-500/30 text-xs font-semibold text-gold-300 tracking-wide">
+            <i class="fa-solid fa-crown text-gold-400"></i>
+            <span>Consultor Oficial Credenciado Atlântica Natural</span>
+          </div>
+
+          <!-- Video quote headline -->
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight tracking-tight text-white">
+            "O perfume certo é o seu <span class="text-gold-gradient italic">cartão de visitas</span> invisível mais poderoso."
+          </h1>
+
+          <p class="text-gray-300 text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            Descubra fragrâncias com <strong>fixação de alto impacto (24h+)</strong> que despertam admiração e presença. Disponíveis no luxuoso frasco de <strong>100ml para sua bancada</strong> ou na versão prática de <strong>15ml para levar onde quiser</strong>.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#" target="_blank" rel="noopener noreferrer" data-msg="Olá Filipe! Gostaria de receber uma consultoria olfativa no WhatsApp e conhecer os perfumes da Atlântica Natural." class="dynamic-wa-btn pulse-whatsapp inline-flex items-center justify-center gap-3 w-full sm:w-auto bg-gradient-to-r from-gold-500 via-gold-400 to-bronze-400 text-noir-950 font-bold px-8 py-4 rounded-full text-base shadow-xl hover:brightness-110 transition-all font-display tracking-wider uppercase">
+              <i class="fa-brands fa-whatsapp text-2xl text-emerald-950"></i>
+              <span>Escolher Minha Fragrância</span>
+            </a>
+
+            <a href="#catalogo" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-7 py-4 rounded-full border border-gold-500/40 text-gold-200 hover:bg-gold-500/10 transition-all text-sm font-semibold tracking-wide">
+              <span>Ver Catálogo</span>
+              <i class="fa-solid fa-arrow-down text-xs text-gold-400"></i>
+            </a>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="grid grid-cols-3 gap-3 pt-6 border-t border-white/10 max-w-xl mx-auto lg:mx-0">
+            <div class="text-center lg:text-left">
+              <div class="text-gold-400 font-bold text-lg sm:text-xl font-display">24h+</div>
+              <div class="text-[11px] sm:text-xs text-gray-400">Fixação e Projeção</div>
+            </div>
+            <div class="text-center lg:text-left border-x border-white/10 px-2">
+              <div class="text-gold-400 font-bold text-lg sm:text-xl font-display">100%</div>
+              <div class="text-[11px] sm:text-xs text-gray-400">Originais Lacrados</div>
+            </div>
+            <div class="text-center lg:text-left">
+              <div class="text-gold-400 font-bold text-lg sm:text-xl font-display">VIP</div>
+              <div class="text-[11px] sm:text-xs text-gray-400">Consultoria Personalizada</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Visual Showcase -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-md">
+            
+            <!-- Glow circle -->
+            <div class="absolute inset-0 bg-gradient-to-b from-gold-500/20 via-bronze-600/10 to-transparent rounded-3xl filter blur-xl"></div>
+            
+            <!-- Showcase Box -->
+            <div class="relative bg-noir-900/90 border border-gold-500/30 rounded-3xl p-6 sm:p-8 backdrop-blur-xl shadow-2xl border-gold-glow">
+              
+              <div class="flex items-center justify-between pb-4 border-b border-white/10">
+                <span class="text-xs uppercase font-semibold tracking-widest text-bronze-300">Atlântica Natural</span>
+                <span class="px-2.5 py-0.5 rounded-full text-[11px] bg-gold-500/10 text-gold-300 border border-gold-500/30">Top Vendidos</span>
+              </div>
+
+              <!-- Product Graphic Render (Stylized Glass Perfume Bottles) -->
+              <div class="py-6 flex items-center justify-center gap-4">
+                
+                <!-- 15ml Pocket Bottle representation -->
+                <div class="flex flex-col items-center group">
+                  <div class="w-12 h-36 rounded-lg bg-gradient-to-b from-amber-200/40 via-amber-600/30 to-amber-900/60 border border-gold-400/50 flex flex-col justify-between items-center p-1.5 shadow-lg relative overflow-hidden backdrop-blur">
+                    <div class="w-4 h-6 bg-gradient-to-t from-gold-400 to-amber-100 rounded-sm border border-gold-300"></div>
+                    <span class="text-[9px] font-bold text-gold-200 rotate-90 tracking-widest">15ml</span>
+                    <div class="w-full h-1 bg-gold-500/30 rounded"></div>
+                  </div>
+                  <span class="text-[11px] text-gray-300 mt-2 font-medium">Pocket 15ml</span>
+                  <span class="text-[9px] text-gold-400">Leve no bolso</span>
+                </div>
+
+                <!-- 100ml Prestige Bottle representation -->
+                <div class="flex flex-col items-center group">
+                  <div class="w-28 h-44 rounded-2xl bg-gradient-to-b from-amber-100/30 via-gold-500/20 to-noir-900/90 border-2 border-gold-400/60 flex flex-col justify-between items-center p-2.5 shadow-2xl relative overflow-hidden backdrop-blur-md gold-shine-effect">
+                    <!-- Spray Cap -->
+                    <div class="w-8 h-8 bg-gradient-to-b from-gold-200 via-gold-400 to-gold-600 rounded-md border border-gold-200 shadow-md"></div>
+                    <!-- Label -->
+                    <div class="text-center py-1 px-2 border border-gold-400/40 rounded bg-noir-950/60 w-full">
+                      <div class="text-[10px] font-serif font-bold text-gold-300 tracking-wider">FORTUNE</div>
+                      <div class="text-[7px] text-gray-300 tracking-widest">PARFUM</div>
+                    </div>
+                    <span class="text-[10px] font-bold text-gold-300">100ml</span>
+                  </div>
+                  <span class="text-[11px] text-gold-200 mt-2 font-semibold">Frasco 100ml</span>
+                  <span class="text-[9px] text-bronze-300">Para sua bancada</span>
+                </div>
+
+                <!-- 15ml Female bottle representation -->
+                <div class="flex flex-col items-center group">
+                  <div class="w-12 h-36 rounded-lg bg-gradient-to-b from-rose-200/40 via-rose-500/30 to-noir-900/70 border border-rose-400/50 flex flex-col justify-between items-center p-1.5 shadow-lg relative overflow-hidden backdrop-blur">
+                    <div class="w-4 h-6 bg-gradient-to-t from-gold-300 to-rose-200 rounded-sm border border-gold-300"></div>
+                    <span class="text-[9px] font-bold text-rose-200 rotate-90 tracking-widest">La Belle</span>
+                    <div class="w-full h-1 bg-rose-400/30 rounded"></div>
+                  </div>
+                  <span class="text-[11px] text-gray-300 mt-2 font-medium">Femininos</span>
+                  <span class="text-[9px] text-rose-300">Doce & Floral</span>
+                </div>
+
+              </div>
+
+              <!-- Quick CTA inside box -->
+              <div class="bg-noir-950/70 rounded-xl p-3 text-center border border-white/5 space-y-1">
+                <p class="text-xs text-gray-300">Não sabe qual perfume combina com você?</p>
+                <a href="#" target="_blank" rel="noopener noreferrer" data-msg="Olá Filipe! Preciso de ajuda para escolher o perfume ideal para o meu estilo." class="dynamic-wa-btn text-gold-400 hover:text-gold-300 font-semibold text-xs flex items-center justify-center gap-1.5 transition">
+                  Fazer teste olfativo gratuito <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Two Sizes Section (100ml vs 15ml) -->
+  <section id="tamanhos" class="py-16 bg-gradient-to-b from-noir-950 via-noir-900 to-noir-950 border-y border-gold-500/15">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs uppercase font-bold tracking-[0.25em] text-gold-400">Versatilidade & Presença</span>
+        <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-white mt-2">
+          Duas Versões Feitas Para o Seu Dia a Dia
+        </h2>
+        <p class="text-gray-400 text-sm sm:text-base mt-3">
+          A mesma essência nobre e concentração intensa, pensadas para momentos diferentes.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        
+        <!-- 100ml Card -->
+        <div class="bg-noir-850/80 border border-gold-500/30 rounded-2xl p-6 sm:p-8 hover:border-gold-400 transition relative overflow-hidden group">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-gold-500/10 rounded-full blur-2xl group-hover:bg-gold-500/20 transition"></div>
+          <div class="flex items-start justify-between">
+            <div class="p-3 bg-gold-500/10 text-gold-400 rounded-xl border border-gold-500/20 text-2xl">
+              <i class="fa-solid fa-gem"></i>
+            </div>
+            <span class="text-xs font-bold uppercase tracking-wider text-gold-300 bg-noir-900 px-3 py-1 rounded-full border border-gold-500/30">
+              Imponência Máxima
+            </span>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-white mt-5">Frasco de 100ml</h3>
+          <p class="text-bronze-300 font-medium text-sm mt-1">Para sua bancada e momentos triunfais</p>
+          <p class="text-gray-400 text-sm mt-3 leading-relaxed">
+            O frasco de prestígio que decora seu quarto ou closet. Ideal para sua rotina diária de autocuidado, saída para reuniões de negócios, encontros ou eventos marcantes.
+          </p>
+          <ul class="mt-4 space-y-2 text-xs text-gray-300">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Rendimento de centenas de borrifadas</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Spray com névoa fina e uniforme</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Melhor custo-benefício por ml</li>
+          </ul>
+        </div>
+
+        <!-- 15ml Card -->
+        <div class="bg-noir-850/80 border border-bronze-500/30 rounded-2xl p-6 sm:p-8 hover:border-bronze-400 transition relative overflow-hidden group">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-bronze-500/10 rounded-full blur-2xl group-hover:bg-bronze-500/20 transition"></div>
+          <div class="flex items-start justify-between">
+            <div class="p-3 bg-bronze-500/10 text-bronze-300 rounded-xl border border-bronze-500/20 text-2xl">
+              <i class="fa-solid fa-spray-can"></i>
+            </div>
+            <span class="text-xs font-bold uppercase tracking-wider text-bronze-300 bg-noir-900 px-3 py-1 rounded-full border border-bronze-500/30">
+              Praticidade Pocket
+            </span>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-white mt-5">Versão Pocket de 15ml</h3>
+          <p class="text-bronze-300 font-medium text-sm mt-1">Para levar no bolso, bolsa ou porta-luvas</p>
+          <p class="text-gray-400 text-sm mt-3 leading-relaxed">
+            Nunca fique sem seu cheiro de assinatura. Perfeito para reaplicar antes daquela reunião inesperada, na academia, em viagens ou no rolê noturno.
+          </p>
+          <ul class="mt-4 space-y-2 text-xs text-gray-300">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-bronze-400"></i> Cabe com discrição em qualquer bolso</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-bronze-400"></i> Travamento seguro contra vazamentos</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-bronze-400"></i> Ideal para colecionar e alternar fragrâncias</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Featured Catalog Section -->
+  <section id="catalogo" class="py-20 bg-noir-950 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Heading -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-xs uppercase font-bold tracking-[0.25em] text-gold-400">Catálogo Premium</span>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-2">
+          Coleção Atlântica Natural
+        </h2>
+        <p class="text-gray-400 text-sm sm:text-base mt-3">
+          Escolha abaixo a fragrância e o tamanho desejado (100ml ou 15ml) para solicitar diretamente ao Filipe.
+        </p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="flex items-center justify-center gap-2 sm:gap-4 mb-12 flex-wrap">
+        <button onclick="filterCatalog('all')" id="tab-all" class="cat-tab active-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider transition-all bg-gold-500 text-noir-950 shadow-lg">
+          Todos os Perfumes
+        </button>
+        <button onclick="filterCatalog('feminino')" id="tab-feminino" class="cat-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider transition-all bg-noir-850 text-gray-300 border border-white/10 hover:border-gold-500/50">
+          Linha Feminina
+        </button>
+        <button onclick="filterCatalog('masculino')" id="tab-masculino" class="cat-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider transition-all bg-noir-850 text-gray-300 border border-white/10 hover:border-gold-500/50">
+          Linha Masculina
+        </button>
+      </div>
+
+      <!-- Product Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Perfume 1: La Belle (Feminino) -->
+        <div class="perfume-card feminino bg-noir-900 border border-white/10 hover:border-gold-500/50 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between hover:shadow-2xl hover:shadow-gold-500/10 group" data-name="La Belle">
+          <div>
+            <!-- Header Badges -->
+            <div class="flex justify-between items-center mb-4">
+              <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-rose-500/10 text-rose-300 border border-rose-500/20">Feminino</span>
+              <span class="text-xs text-gold-400 font-semibold flex items-center gap-1">
+                <i class="fa-solid fa-star text-[10px]"></i> 4.9/5.0
+              </span>
+            </div>
+
+            <!-- Perfume Illustration / Bottle Preview -->
+            <div class="h-48 w-full bg-gradient-to-b from-noir-850 to-noir-950 rounded-xl border border-white/5 flex items-center justify-center p-4 relative overflow-hidden group-hover:border-rose-400/30 transition">
+              <div class="absolute inset-0 bg-gradient-to-t from-rose-950/20 to-transparent"></div>
+              
+              <!-- Visual stylized bottle for La Belle -->
+              <div class="flex items-end gap-3 z-10">
+                <!-- 100ml -->
+                <div class="w-20 h-32 rounded-xl bg-gradient-to-b from-rose-100/30 via-rose-300/20 to-noir-900/80 border border-rose-300/50 flex flex-col items-center justify-between p-1.5 shadow-md">
+                  <div class="w-6 h-5 bg-gradient-to-t from-gold-300 to-rose-200 rounded-sm"></div>
+                  <div class="text-center font-serif text-[10px] text-rose-200 font-bold">La Belle</div>
+                  <span class="text-[8px] text-gray-400">100ml</span>
+                </div>
+                <!-- 15ml -->
+                <div class="w-8 h-24 rounded-md bg-gradient-to-b from-rose-200/40 to-noir-900 border border-rose-300/40 flex flex-col items-center justify-between p-1">
+                  <div class="w-3 h-3 bg-gold-400 rounded-xs"></div>
+                  <span class="text-[7px] text-rose-300 font-bold">15ml</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Title & Slogan -->
+            <h3 class="font-serif text-2xl font-bold text-white mt-4">La Belle</h3>
+            <p class="text-xs text-rose-300 font-medium italic mt-1">"O brilho leve e a sofisticação floral"</p>
+            <p class="text-gray-400 text-xs mt-3 leading-relaxed">
+              Uma fragrância radiante, delicada e apaixonante. Combina a elegância de flores nobres com um toque doce sutil para mulheres que encantam por onde passam.
+            </p>
+
+            <!-- Fragrance Notes Badges -->
+            <div class="flex flex-wrap gap-1.5 mt-4">
+              <span class="text-[10px] bg-noir-800 text-gray-300 px-2 py-0.5 rounded border border-white/5">Floral Frutado</span>
+              <span class="text-[10px] bg-noir-800 text-gray-300 px-2 py-0.5 rounded border border-white/5">Gourmand</span>
+              <span class="text-[10px] bg-noir-800 text-gray-300 px-2 py-0.5 rounded border border-white/5">Romântico</span>
+            </div>
+          </div>
+
+          <!-- Size Selector & Action -->
+          <div class="mt-6 pt-4 border-t border-white/10">
+            <div class="flex items-center justify-between mb-3 text-xs">
+              <span class="text-gray-400 font-medium">Selecione o frasco:</span>
+              <div class="flex gap-1">
+                <button type="button" onclick="selectSize(this, '100ml')" class="size-btn px-2.5 py-1 rounded text-[11px] font-bold bg-gold-500 text-noir-950 border border-gold-400 transition">100ml</button>
+                <button type="button" onclick="selectSize(this, '15ml')" class="size-btn px-2.5 py-1 rounded text-[11px] font-bold bg-noir-800 text-gray-300 border border-white/10 hover:border-gold-500/40 transition">15ml</button>
+              </div>
+            </div>
+
+            <button onclick="orderPerfume('La Belle', this)" class="w-full bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-bold py-3 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg transition transform active:scale-95">
+              <i class="fa-brands fa-whatsapp text-lg"></i>
+              <span>Quero o La Belle no WhatsApp</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Perfume 2: Amore Radiant Gold (Feminino) -->
+        <div class="perfume-card feminino bg-noir-900 border border-white/10 hover:border-gold-500/50 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between hover:shadow-2xl hover:shadow-gold-500/10 group" data-name="Amore Radiant Gold">
+          <div>
+            <!-- Header Badges -->
+            <div class="flex justify-between items-center mb-4">
+              <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-amber-500/10 text-amber-300 border border-amber-500/20">Feminino Luxo</span>
+              <span class="text-xs text-gold-400 font-semibold flex items-center gap-1">
+                <i class="fa-solid fa-star text-[10px]"></i> 5.0/5.0
+              </span>
+            </div>
+
+            <!-- Perfume Illustration -->
+            <div class="h-48 w-full bg-gradient-to-b from-noir-850 to-noir-950 rounded-xl border border-white/5 flex items-center justify-center p-4 relative overflow-hidden group-hover:border-gold-400/30 transition">
+              <div class="absolute inset-0 bg-gradient-to-t from-gold-950/20 to-transparent"></div>
+              
+              <div class="flex items-end gap-3 z-10">
+                <!-- 100ml Oval bottle -->
+                <div class="w-22 h-32 rounded-3xl bg-gradient-to-b from-gold-200/40 via-amber-400/30 to-noir-900/90 border border-gold-300/60 flex flex-col items-center justify-between p-2 shadow-md">
+                  <div class="w-7 h-5 bg-gradient-to-t from-gold-400 to-amber-200 rounded-md"></div>
+                  <div class="text-center font-serif text-[10px] text-gold-200 font-bold">Amore</div>
+                  <span class="text-[8px] text-gray-400">100ml</span>
+                </div>
+                <!-- 15ml -->
+                <div class="w-8 h-24 rounded-md bg-gradient-to-b from-amber-200/40 to-noir-900 border border-gold-300/40 flex flex-col items-center justify-between p-1">
+                  <div class="w-3 h-3 bg-gold-400 rounded-xs"></div>
+                  <span class="text-[7px] text-gold-300 font-bold">15ml</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Title & Slogan -->
+            <h3 class="font-serif text-2xl font-bold text-white mt-4">Amore <span class="text-gold-300 text-lg">Radiant Gold</span></h3>
+            <p class="text-xs text-gold-400 font-medium italic mt-1">"O luxo solar e envolvente da mulher segura"</p>
+            <p class="text-gray-400 text-xs mt-3 leading-relaxed">
+              Inspirado no calor do ouro e na intensidade da paixão. Uma aura magnética com nuances florais douradas e fundo âmbar sedutor.
+            </p>
+
+            <div class="flex flex-wrap gap-1.5 mt-4">
+              <span class="text-[10px] bg-noir-800 text-gray-300 px-2 py-0.5 rounded border border-white/5">Âmbar Floral</span>
+              <span class="text-[10px] bg-noir-800 text-gray-300 px-2 py-0.5 rounded border border-white/5">Solar</span>
+              <span class="text-[10px] bg-noir-800 text-gray-300 px-2 py-0.5 rounded border border-white/5">Marcante</span>
+            </div>
+          </div>
+
+          <!-- Size Selector & Action -->
+          <div class="mt-6 pt-4 border-t border-white/10">
+            <div class="flex items-center justify-between mb-3 text-xs">
+              <span class="text-gray-400 font-medium">Selecione o frasco:</span>
+              <div class="flex gap-1">
+                <button type="button" onclick="selectSize(this, '100ml')" class="size-btn px-2.5 py-1 rounded text-[11px] font-bold bg-gold-500 text-noir-950 border border-gold-400 transition">100ml</button>
+                <button type="button" onclick="selectSize(this, '15ml')" class="size-btn px-2.5 py-1 rounded text-[11px] font-bold bg-noir-800 text-gray-300 border border-white/10 hover:border-gold-500/40 transition">15ml</button>
+              </div>
+            </div>
+
+            <button onclick="orderPerfume('Amore Radiant Gold', this)" class="w-full bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-bold py-3 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg transition transform active:scale-95">
+              <i class="fa-brands fa-whatsapp text-lg"></i>
+              <span>Quero o Amore no WhatsApp</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Perfume 3: Good Woman (Feminino) -->
+        <div class="perfume-card feminino bg-noir-900 border border-white/10 hover:border-gold-500/50 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between hover:shadow-2xl hover:shadow-gold-500/10 group" data-name="Good Woman">
+          <div>
+            <!-- Header Badges -->
+            <div class="flex justify-between items-center mb-4">
+              <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">Feminino Ousado</span>
+              <span class="text-xs text-gold-400 font-semibold flex items-center gap-1">
+                <i class="fa-solid fa-star text-[10px]"></i> 5.0/5.0
+              </span>
+            </div>
+
+            <!-- Perfume Illustration -->
+            <div class="h-48 w-full bg-gradient-to-b from-noir-850 to-noir-950 rounded-xl border border-white/5 flex items-center justify-center p-4 relative overflow-hidden group-hover:border-indigo-400/30 transition">
+              <div class="absolute inset-0 bg-gradient-to-t from-blue-950/30 to-transparent"></div>
+              
+              <div class="flex items-end gap-3 z-10">
+                <!-- 100ml Midnight Blue Bottle -->
+                <div class="w-20 h-32 rounded-2xl bg-gradient-to-b from-blue-900/60 via-indigo-950 to-noir-950 border border-blue-400/40 flex flex-col items-center justify-between p-2 shadow-md">
+                  <div class="w-6 h-5 bg-gradient-to-t from-gold-300 to-amber-100 rounded-sm"></div>
+                  <div class="text-center font-serif text-[9px] text-blue-200 font-bold">Good Woman</div>
+                  <span class="text-[8px] text-gold-400">100ml</span>
+                </div>
+                <!-- 15ml -->
+                <div class="w-8 h-24 rounded-md bg-gradient-to-b from-blue-800/40 to-noir-900 border border-blue-400/40 flex flex-col items-center justify-between p-1">
+                  <div class="w-3 h-3 bg-gold-400 rounded-xs"></div>
+                  <span class="text-[7px] text-blue-300 font-bold">15ml</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Title & Slogan -->
+            <h3 class="font-serif text-2xl font-bold text-white mt-4">Good Woman</h3>
+            <p class="text-xs text-indigo-300 font-medium italic mt-1">"A ousadia marcante para noites inesquecíveis"</p>
+            <p class="text-gray-400 text-xs mt-3 leading-relaxed">
+              Dualidade magnética de notas doces de cacau e fava tonka com a luminosidade do jasmim e tuberosa. Sensual, misterioso e impossível de ignorar.
+            </p>
+
+            <div class="flex flex-wrap gap-1.5 mt-4">
+              <span class="text-[10px] bg-noir-800 text-gray-300 px-2 py-0.5 rounded border border-white/5">Oriental Floral</span>
+              <span class="text-[10px] bg-noir-800 text-gray-300 px-2 py-0.5 rounded border border-white/5">Sensual</span>
+              <span class="text-[10px] bg-noir-800 text-gray-300 px-2 py-0.5 rounded border border-white/5">Alta Projeção</span>
+            </div>
+          </div>
+
+          <!-- Size Selector & Action -->
+          <div class="mt-6 pt-4 border-t border-white/10">
+            <div class="flex items-center justify-between mb-3 text-xs">
+              <span class="text-gray-400 font-medium">Selecione o frasco:</span>
+              <div class="flex gap-1">
+                <button type="button" onclick="selectSize(this, '100ml')" class="size-btn px-2.5 py-1 rounded text-[11px] font-bold bg-gold-500 text-noir-950 border border-gold-400 transition">100ml</button>
+                <button type="button" onclick="selectSize(this, '15ml')" class="size-btn px-2.5 py-1 rounded text-[11px] font-bold bg-noir-800 text-gray-300 border border-white/10 hover:border-gold-500/40 transition">15ml</button>
+              </div>
+            </div>
+
+            <button onclick="orderPerfume('Good Woman', this)" class="w-full bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-bold py-3 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg transition transform active:scale-95">
+              <i class="fa-brands fa-whatsapp text-lg"></i>
+              <span>Quero o Good Woman no WhatsApp</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Perfume 4: Fortune (Masculino) -->
+        <div class="perfume-card masculino bg-noir-900 border border-white/10 hover:border-gold-500/50 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between hover:shadow-2xl hover:shadow-gold-500/10 group" data-name="Fortune">
+          <div>
+            <!-- Header Badges -->
+            <div class="flex justify-between items-center mb-4">
+              <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-gold-500/15 text-gold-300 border border-gold-500/30">Masculino Poder</span>
+              <span class="text-xs text-gold-400 font-semibold flex items-center gap-1">
+                <i class="fa-solid fa-fire text-amber-500 text-[10px]"></i> Bestseller
+              </span>
+            </div>
+
+            <!-- Perfume Illustration -->
+            <div class="h-48 w-full bg-gradient-to-b from-noir-850 to-noir-950 rounded-xl border border-white/5 flex items-center justify-center p-4 relative overflow-hidden group-hover:border-gold-400/40 transition">
+              <div class="absolute inset-0 bg-gradient-to-t from-gold-950/25 to-transparent"></div>
+              
+              <div class="flex items-end gap-3 z-10">
+                <!-- 100ml Fortune Gold Block -->
+                <div class="w-22 h-32 rounded-lg bg-gradient-to-b from-amber-100/40 via-gold-500/40 to-noir-900 border-2 border-gold-400/60 flex flex-col items-center justify-between p-2 shadow-xl gold-shine-effect">
+                  <div class="w-7 h-5 bg-gradient-to-t from-gold-300 to-amber-100 rounded-sm"></div>
+                  <div class="text-center font-display text-[10px] text-gold-200 font-black tracking-wider">FORTUNE</div>
+                  <span class="text-[8px] text-gold-300">100ml</span>
+                </div>
+                <!-- 15ml -->
+                <div class="w-8 h-24 rounded-md bg-gradient-to-b from-amber-300/40 to-noir-900 border border-gold-400/40 flex flex-col items-center justify-between p-1">
+                  <div class="w-3 h-3 bg-gold-400 rounded-xs"></div>
+                  <span class="text-[7px] text-gold-300 font-bold">15ml</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Title & Slogan -->
+            <h3 class="font-serif text-2xl font-bold text-white mt-4">Fortune</h3>
+            <p class="text-xs text-gold-400 font-medium italic mt-1">"A ambição e o magnetismo do sucesso"</p>
+            <p class="text-gray-400 text-xs mt-3 leading-relaxed">
+              Para o homem que sabe exatamente onde quer chegar. Uma explosão picante e couro nobre com fundo amadeirado doce que exala riqueza e prestígio.
+            </p>
+
+            <div class="flex flex-wrap gap-1.5 mt-4">
+              <span class="text-[10px] bg-noir-800 text-gray-300 px-2 py-0.5 rounded border border-white/5">Amadeirado Especiado</span>
+              <span class="text-[10px] bg-noir-800 text-gray-300 px-2 py-0.5 rounded border border-white/5">Couro Nobre</span>
+              <span class="text-[10px] bg-noir-800 text-gray-300 px-2 py-0.5 rounded border border-white/5">Vencedor</span>
+            </div>
+          </div>
+
+          <!-- Size Selector & Action -->
+          <div class="mt-6 pt-4 border-t border-white/10">
+            <div class="flex items-center justify-between mb-3 text-xs">
+              <span class="text-gray-400 font-medium">Selecione o frasco:</span>
+              <div class="flex gap-1">
+                <button type="button" onclick="selectSize(this, '100ml')" class="size-btn px-2.5 py-1 rounded text-[11px] font-bold bg-gold-500 text-noir-950 border border-gold-400 transition">100ml</button>
+                <button type="button" onclick="selectSize(this, '15ml')" class="size-btn px-2.5 py-1 rounded text-[11px] font-bold bg-noir-800 text-gray-300 border border-white/10 hover:border-gold-500/40 transition">15ml</button>
+              </div>
+            </div>
+
+            <button onclick="orderPerfume('Fortune', this)" class="w-full bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-bold py-3 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg transition transform active:scale-95">
+              <i class="fa-brands fa-whatsapp text-lg"></i>
+              <span>Quero o Fortune no WhatsApp</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Perfume 5: Imortal (Masculino) -->
+        <div class="perfume-card masculino bg-noir-900 border border-white/10 hover:border-gold-500/50 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between hover:shadow-2xl hover:shadow-gold-500/10 group" data-name="Imortal">
+          <div>
+            <!-- Header Badges -->
+            <div class="flex justify-between items-center mb-4">
+              <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-slate-500/15 text-slate-300 border border-slate-500/30">Masculino Imponência</span>
+              <span class="text-xs text-gold-400 font-semibold flex items-center gap-1">
+                <i class="fa-solid fa-star text-[10px]"></i> 4.9/5.0
+              </span>
+            </div>
+
+            <!-- Perfume Illustration -->
+            <div class="h-48 w-full bg-gradient-to-b from-noir-850 to-noir-950 rounded-xl border border-white/5 flex items-center justify-center p-4 relative overflow-hidden group-hover:border-slate-400/40 transition">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent"></div>
+              
+              <div class="flex items-end gap-3 z-10">
+                <!-- 100ml Silver/Crystal bottle -->
+                <div class="w-22 h-32 rounded-xl bg-gradient-to-b from-slate-200/40 via-slate-400/20 to-noir-900 border-2 border-slate-300/50 flex flex-col items-center justify-between p-2 shadow-xl">
+                  <div class="w-7 h-5 bg-gradient-to-t from-slate-200 to-slate-400 rounded-sm"></div>
+                  <div class="text-center font-display text-[10px] text-white font-bold tracking-widest">IMORTAL</div>
+                  <span class="text-[8px] text-slate-300">100ml</span>
+                </div>
+                <!-- 15ml -->
+                <div class="w-8 h-24 rounded-md bg-gradient-to-b from-slate-300/40 to-noir-900 border border-slate-300/40 flex flex-col items-center justify-between p-1">
+                  <div class="w-3 h-3 bg-slate-300 rounded-xs"></div>
+                  <span class="text-[7px] text-slate-200 font-bold">15ml</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Title & Slogan -->
+            <h3 class="font-serif text-2xl font-bold text-white mt-4">Imortal</h3>
+            <p class="text-xs text-slate-300 font-medium italic mt-1">"Imponência pura e a vitória inegociável"</p>
+            <p class="text-gray-400 text-xs mt-3 leading-relaxed">
+              Frescor aquático vigoroso com notas de louro e âmbar cinza. O perfume do homem invicto que domina qualquer ambiente com elegância viril.
+            </p>
+
+            <div class="flex flex-wrap gap-1.5 mt-4">
+              <span class="text-[10px] bg-noir-800 text-gray-300 px-2 py-0.5 rounded border border-white/5">Aquático Amadeirado</span>
+              <span class="text-[10px] bg-noir-800 text-gray-300 px-2 py-0.5 rounded border border-white/5">Fresco Intenso</span>
+              <span class="text-[10px] bg-noir-800 text-gray-300 px-2 py-0.5 rounded border border-white/5">Presença</span>
+            </div>
+          </div>
+
+          <!-- Size Selector & Action -->
+          <div class="mt-6 pt-4 border-t border-white/10">
+            <div class="flex items-center justify-between mb-3 text-xs">
+              <span class="text-gray-400 font-medium">Selecione o frasco:</span>
+              <div class="flex gap-1">
+                <button type="button" onclick="selectSize(this, '100ml')" class="size-btn px-2.5 py-1 rounded text-[11px] font-bold bg-gold-500 text-noir-950 border border-gold-400 transition">100ml</button>
+                <button type="button" onclick="selectSize(this, '15ml')" class="size-btn px-2.5 py-1 rounded text-[11px] font-bold bg-noir-800 text-gray-300 border border-white/10 hover:border-gold-500/40 transition">15ml</button>
+              </div>
+            </div>
+
+            <button onclick="orderPerfume('Imortal', this)" class="w-full bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-bold py-3 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg transition transform active:scale-95">
+              <i class="fa-brands fa-whatsapp text-lg"></i>
+              <span>Quero o Imortal no WhatsApp</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Perfume 6: Indomável (Masculino) -->
+        <div class="perfume-card masculino bg-noir-900 border border-white/10 hover:border-bronze-500/50 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between hover:shadow-2xl hover:shadow-bronze-500/10 group" data-name="Indomável">
+          <div>
+            <!-- Header Badges -->
+            <div class="flex justify-between items-center mb-4">
+              <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-bronze-500/15 text-bronze-300 border border-bronze-500/30">Masculino Selvagem</span>
+              <span class="text-xs text-gold-400 font-semibold flex items-center gap-1">
+                <i class="fa-solid fa-star text-[10px]"></i> 5.0/5.0
+              </span>
+            </div>
+
+            <!-- Perfume Illustration -->
+            <div class="h-48 w-full bg-gradient-to-b from-noir-850 to-noir-950 rounded-xl border border-white/5 flex items-center justify-center p-4 relative overflow-hidden group-hover:border-bronze-400/40 transition">
+              <div class="absolute inset-0 bg-gradient-to-t from-amber-950/30 to-transparent"></div>
+              
+              <div class="flex items-end gap-3 z-10">
+                <!-- 100ml Whiskey Amber bottle -->
+                <div class="w-22 h-32 rounded-xl bg-gradient-to-b from-amber-500/40 via-amber-800/40 to-noir-950 border-2 border-bronze-400/60 flex flex-col items-center justify-between p-2 shadow-xl">
+                  <div class="w-7 h-5 bg-gradient-to-t from-noir-800 to-black rounded-sm border border-bronze-400/40"></div>
+                  <div class="text-center font-display text-[9px] text-amber-200 font-black tracking-wider">INDOMÁVEL</div>
+                  <span class="text-[8px] text-bronze-300">100ml</span>
+                </div>
+                <!-- 15ml -->
+                <div class="w-8 h-24 rounded-md bg-gradient-to-b from-amber-600/40 to-noir-900 border border-bronze-400/40 flex flex-col items-center justify-between p-1">
+                  <div class="w-3 h-3 bg-bronze-500 rounded-xs"></div>
+                  <span class="text-[7px] text-amber-300 font-bold">15ml</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Title & Slogan -->
+            <h3 class="font-serif text-2xl font-bold text-white mt-4">Indomável</h3>
+            <p class="text-xs text-bronze-300 font-medium italic mt-1">"O instinto selvagem e autêntico"</p>
+            <p class="text-gray-400 text-xs mt-3 leading-relaxed">
+              Bergamota da Calábria e pimenta sichuan sobre um rastro amadeirado de ambroxan puro. O perfume da liberdade e da masculinidade imponente.
+            </p>
+
+            <div class="flex flex-wrap gap-1.5 mt-4">
+              <span class="text-[10px] bg-noir-800 text-gray-300 px-2 py-0.5 rounded border border-white/5">Fougère Aromático</span>
+              <span class="text-[10px] bg-noir-800 text-gray-300 px-2 py-0.5 rounded border border-white/5">Amadeirado</span>
+              <span class="text-[10px] bg-noir-800 text-gray-300 px-2 py-0.5 rounded border border-white/5">Rastro Intenso</span>
+            </div>
+          </div>
+
+          <!-- Size Selector & Action -->
+          <div class="mt-6 pt-4 border-t border-white/10">
+            <div class="flex items-center justify-between mb-3 text-xs">
+              <span class="text-gray-400 font-medium">Selecione o frasco:</span>
+              <div class="flex gap-1">
+                <button type="button" onclick="selectSize(this, '100ml')" class="size-btn px-2.5 py-1 rounded text-[11px] font-bold bg-gold-500 text-noir-950 border border-gold-400 transition">100ml</button>
+                <button type="button" onclick="selectSize(this, '15ml')" class="size-btn px-2.5 py-1 rounded text-[11px] font-bold bg-noir-800 text-gray-300 border border-white/10 hover:border-gold-500/40 transition">15ml</button>
+              </div>
+            </div>
+
+            <button onclick="orderPerfume('Indomável', this)" class="w-full bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-bold py-3 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg transition transform active:scale-95">
+              <i class="fa-brands fa-whatsapp text-lg"></i>
+              <span>Quero o Indomável no WhatsApp</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Custom Request Banner -->
+      <div class="mt-12 p-6 rounded-2xl bg-gradient-to-r from-noir-900 via-noir-850 to-noir-900 border border-gold-500/20 text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-center sm:text-left">
+          <h4 class="font-serif text-lg font-bold text-white">Procurando outro perfume da Atlântica Natural?</h4>
+          <p class="text-xs text-gray-400 mt-1">Como consultor credenciado, o Filipe tem acesso a todo o portfólio oficial.</p>
+        </div>
+        <a href="#" target="_blank" rel="noopener noreferrer" data-msg="Olá Filipe! Gostaria de saber se você tem outro perfume da Atlântica Natural disponível no catálogo." class="dynamic-wa-btn shrink-0 px-6 py-3 rounded-full bg-gold-500/10 hover:bg-gold-500/20 text-gold-300 border border-gold-500/30 text-xs font-semibold tracking-wide transition flex items-center gap-2">
+          <i class="fa-brands fa-whatsapp text-base text-emerald-400"></i>
+          Consultar Outras Fragrâncias
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Consultant Section: Sobre o Filipe -->
+  <section id="sobre" class="py-20 bg-noir-900 relative overflow-hidden border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Consultant Photo Frame (Instagram aesthetic) -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative group">
+            <!-- Gold ambient frame -->
+            <div class="absolute -inset-1 bg-gradient-to-r from-gold-500 via-bronze-500 to-gold-300 rounded-3xl blur opacity-35 group-hover:opacity-60 transition duration-500"></div>
+            
+            <div class="relative bg-noir-950 p-4 rounded-3xl border border-gold-500/30 max-w-sm">
+              <!-- Photo Container -->
+              <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-noir-900 border border-white/10 group/img">
+                <img 
+                  src="assets/filipe-sales-consultor.jpeg" 
+                  alt="Filipe Sales - Consultor de Perfumes Atlântica Natural" 
+                  class="w-full h-full object-cover object-top transition duration-700 group-hover/img:scale-105"
+                  loading="lazy"
+                />
+                
+                <!-- Bottom gradient shadow for contrast -->
+                <div class="absolute inset-0 bg-gradient-to-t from-noir-950 via-noir-950/20 to-transparent"></div>
+                
+                <!-- Online Status Badge -->
+                <div class="absolute top-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-noir-950/85 backdrop-blur-md border border-emerald-500/40 text-[10px] font-semibold text-emerald-400 shadow-lg">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  Online no WhatsApp
+                </div>
+
+                <!-- Overlaid Consultant Details -->
+                <div class="absolute bottom-3 left-4 right-4 text-left">
+                  <h4 class="font-display font-bold text-white text-base sm:text-lg tracking-wider drop-shadow-md">FILIPE SALES</h4>
+                  <p class="text-[11px] text-gold-300 font-medium drop-shadow">Consultor Oficial Atlântica Natural</p>
+                </div>
+              </div>
+
+              <!-- Instagram Official Link Badge -->
+              <a href="https://www.instagram.com/filipesales.perfumes/#" target="_blank" rel="noopener noreferrer" class="mt-3 w-full inline-flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-white/5 hover:bg-gradient-to-r hover:from-purple-600/20 hover:to-pink-600/20 border border-white/10 hover:border-pink-500/40 text-xs text-gray-200 hover:text-white transition group/insta">
+                <i class="fa-brands fa-instagram text-pink-400 text-sm group-hover/insta:scale-110 transition-transform"></i>
+                <span class="font-medium">@filipesales.perfumes</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-gray-400 ml-1"></i>
+              </a>
+
+              <!-- Mini social status footer -->
+              <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs px-2">
+                <span class="text-gray-400"><i class="fa-solid fa-certificate text-gold-400 mr-1"></i> Autorizado</span>
+                <span class="text-emerald-400 font-medium"><i class="fa-solid fa-circle text-[8px] mr-1 animate-pulse"></i> Atendimento Hoje</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Bio & Value Proposition -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/20 text-xs font-semibold text-gold-300">
+            <span>Consultoria VIP Personalizada</span>
+          </div>
+
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+            Mais do que vender perfume, eu ajudo você a marcar sua <span class="text-gold-gradient">presença no mundo</span>.
+          </h2>
+
+          <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+            Olá! Sou <strong>Filipe Sales</strong>, consultor apaixonado pela alta perfumaria da <em>Atlântica Natural</em>. Muitas pessoas compram perfumes no escuro e se arrependem com fragrâncias que não combinam com seu clima, tipo de pele ou personalidade.
+          </p>
+
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Meu objetivo é guiar você em uma <strong>consultoria olfativa sem custo</strong> pelo WhatsApp: analisamos se você busca um perfume para o trabalho, encontros, rotina diária ou festas, garantindo que você receba o frasco ideal.
+          </p>
+
+          <!-- Highlights List -->
+          <div class="grid sm:grid-cols-2 gap-4 pt-2">
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-noir-950 border border-white/5 text-left">
+              <i class="fa-solid fa-shield-heart text-gold-400 text-lg mt-0.5"></i>
+              <div>
+                <h5 class="text-white text-xs font-bold">100% Lacrado de Fábrica</h5>
+                <p class="text-gray-400 text-[11px] mt-0.5">Procedência direta da Atlântica Natural com garantia.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-noir-950 border border-white/5 text-left">
+              <i class="fa-solid fa-truck-fast text-gold-400 text-lg mt-0.5"></i>
+              <div>
+                <h5 class="text-white text-xs font-bold">Agilidade no Envio</h5>
+                <p class="text-gray-400 text-[11px] mt-0.5">Embalagem segura e despacho imediato para todo o Brasil.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Direct CTA -->
+          <div class="pt-4">
+            <a href="#" target="_blank" rel="noopener noreferrer" data-msg="Olá Filipe! Gostaria de conversar com você sobre as fragrâncias da Atlântica Natural." class="dynamic-wa-btn inline-flex items-center gap-3 bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-500 hover:to-green-400 text-white font-bold px-8 py-4 rounded-full text-sm shadow-xl transition-all">
+              <i class="fa-brands fa-whatsapp text-xl"></i>
+              <span>Falar Diretamente com Filipe Sales</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Differentials: Por que Atlântica Natural? -->
+  <section id="diferenciais" class="py-20 bg-noir-950 relative border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase font-bold tracking-[0.25em] text-gold-400">Qualidade Superior</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-2">
+          Por Que Nossos Perfumes Rendem Tantos Elogios?
+        </h2>
+        <p class="text-gray-400 text-sm mt-3">
+          Desenvolvidos com concentração Parfum e óleos essenciais importados que duram o dia inteiro.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="p-6 rounded-2xl bg-noir-900 border border-white/5 hover:border-gold-500/30 transition text-center space-y-3">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-2xl border border-gold-500/20">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+          <h3 class="font-serif text-lg font-bold text-white">Fixação Extrema</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            Permanece na pele por até 24 horas e ainda mais nas roupas, mantendo sua assinatura em qualquer lugar.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-noir-900 border border-white/5 hover:border-gold-500/30 transition text-center space-y-3">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-2xl border border-gold-500/20">
+            <i class="fa-solid fa-wind"></i>
+          </div>
+          <h3 class="font-serif text-lg font-bold text-white">Rastro Marcante</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            Projeção na medida certa. As pessoas notam quando você entra na sala sem ser invasivo ou enjoativo.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-noir-900 border border-white/5 hover:border-gold-500/30 transition text-center space-y-3">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-2xl border border-gold-500/20">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <h3 class="font-serif text-lg font-bold text-white">Essências Nobres</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            Matérias-primas rigorosamente selecionadas, garantindo fidelidade olfativa e sofisticação pura.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-noir-900 border border-white/5 hover:border-gold-500/30 transition text-center space-y-3">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-2xl border border-gold-500/20">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+          </div>
+          <h3 class="font-serif text-lg font-bold text-white">Preço Justo</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            Toda a pompa da alta perfumaria internacional com o custo justo e acessível da produção nacional.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Social Proof & Compliments -->
+  <section class="py-16 bg-noir-900/60 border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs uppercase font-bold tracking-[0.25em] text-gold-400">Depoimentos Reais</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-white mt-2">
+          O Que Nossos Clientes Sentem
+        </h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Depoimento 1 -->
+        <div class="p-6 rounded-2xl bg-noir-950 border border-gold-500/20 space-y-4">
+          <div class="flex text-amber-400 text-xs gap-1">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-xs text-gray-300 italic leading-relaxed">
+            "Comprei o Fortune de 100ml com o Filipe e levei o de 15ml no bolso. Fui para um evento empresarial e recebi elogios de três pessoas logo na primeira hora. A fixação é surreal."
+          </p>
+          <div class="flex items-center gap-3 pt-2 border-t border-white/5">
+            <div class="w-8 h-8 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center font-bold text-xs">M</div>
+            <div>
+              <h4 class="text-xs font-bold text-white">Marcelo Silveira</h4>
+              <p class="text-[10px] text-gray-400">Comprou Fortune (100ml + 15ml)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Depoimento 2 -->
+        <div class="p-6 rounded-2xl bg-noir-950 border border-gold-500/20 space-y-4">
+          <div class="flex text-amber-400 text-xs gap-1">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-xs text-gray-300 italic leading-relaxed">
+            "O La Belle virou meu cheiro oficial. É doce sem enjoar, muito chique. O atendimento do Filipe no WhatsApp foi impecável, tirou todas as dúvidas e chegou super rápido!"
+          </p>
+          <div class="flex items-center gap-3 pt-2 border-t border-white/5">
+            <div class="w-8 h-8 rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center font-bold text-xs">C</div>
+            <div>
+              <h4 class="text-xs font-bold text-white">Camila Prado</h4>
+              <p class="text-[10px] text-gray-400">Comprou La Belle (100ml)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Depoimento 3 -->
+        <div class="p-6 rounded-2xl bg-noir-950 border border-gold-500/20 space-y-4">
+          <div class="flex text-amber-400 text-xs gap-1">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-xs text-gray-300 italic leading-relaxed">
+            "O Good Woman é poder puro. Uso para sair à noite e gruda na pele e no casaco até o dia seguinte. Valeu cada centavo, recomendo de olhos fechados."
+          </p>
+          <div class="flex items-center gap-3 pt-2 border-t border-white/5">
+            <div class="w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-xs">R</div>
+            <div>
+              <h4 class="text-xs font-bold text-white">Renata Albuquerque</h4>
+              <p class="text-[10px] text-gray-400">Comprou Good Woman (100ml)</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="duvidas" class="py-16 bg-noir-950">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10">
+        <span class="text-xs uppercase font-bold tracking-[0.25em] text-gold-400">Tire Suas Dúvidas</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-white mt-2">Perguntas Frequentes</h2>
+      </div>
+
+      <div class="space-y-3">
+        
+        <details class="group bg-noir-900 border border-white/10 rounded-xl p-4 transition-colors hover:border-gold-500/40">
+          <summary class="flex justify-between items-center cursor-pointer font-semibold text-sm text-white list-none">
+            <span>Os perfumes são originais da Atlântica Natural?</span>
+            <span class="transition group-open:rotate-180 text-gold-400"><i class="fa-solid fa-chevron-down"></i></span>
+          </summary>
+          <p class="text-xs text-gray-400 mt-3 leading-relaxed">
+            Sim! O Filipe Sales é consultor oficial credenciado. Todos os produtos são 100% originais, lacrados e com procedência direta da fábrica.
+          </p>
+        </details>
+
+        <details class="group bg-noir-900 border border-white/10 rounded-xl p-4 transition-colors hover:border-gold-500/40">
+          <summary class="flex justify-between items-center cursor-pointer font-semibold text-sm text-white list-none">
+            <span>Qual a diferença entre a versão de 100ml e a de 15ml?</span>
+            <span class="transition group-open:rotate-180 text-gold-400"><i class="fa-solid fa-chevron-down"></i></span>
+          </summary>
+          <p class="text-xs text-gray-400 mt-3 leading-relaxed">
+            A fragrância e a concentração são exatamente as mesmas! A versão de 100ml é ideal para deixar na bancada e usar diariamente com maior economia. A versão de 15ml foi desenvolvida para você levar no bolso, bolsa ou mala de viagem.
+          </p>
+        </details>
+
+        <details class="group bg-noir-900 border border-white/10 rounded-xl p-4 transition-colors hover:border-gold-500/40">
+          <summary class="flex justify-between items-center cursor-pointer font-semibold text-sm text-white list-none">
+            <span>Como faço para fazer o pedido e pagar?</span>
+            <span class="transition group-open:rotate-180 text-gold-400"><i class="fa-solid fa-chevron-down"></i></span>
+          </summary>
+          <p class="text-xs text-gray-400 mt-3 leading-relaxed">
+            Basta clicar em qualquer botão do site para abrir uma conversa direta no WhatsApp com o Filipe. Ele confirmará a disponibilidade, combinará a entrega e as formas de pagamento (Pix, Cartão ou Boleto).
+          </p>
+        </details>
+
+        <details class="group bg-noir-900 border border-white/10 rounded-xl p-4 transition-colors hover:border-gold-500/40">
+          <summary class="flex justify-between items-center cursor-pointer font-semibold text-sm text-white list-none">
+            <span>E se eu não souber qual perfume escolher?</span>
+            <span class="transition group-open:rotate-180 text-gold-400"><i class="fa-solid fa-chevron-down"></i></span>
+          </summary>
+          <p class="text-xs text-gray-400 mt-3 leading-relaxed">
+            Não tem problema! Chame o Filipe no WhatsApp e ele fará uma consultoria rápida gratuita com base no seu gosto pessoal (se prefere doce, amadeirado, cítrico ou marcante).
+          </p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Aggressive Final CTA Banner -->
+  <section class="py-20 relative overflow-hidden bg-gradient-to-b from-noir-950 via-noir-900 to-black border-t border-gold-500/30">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gold-500/10 via-transparent to-transparent"></div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10 text-center space-y-6">
+      
+      <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-bold text-emerald-400 uppercase tracking-widest">
+        <i class="fa-solid fa-bolt"></i> Atendimento Rápido Sem Compromisso
+      </span>
+
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
+        Descubra Sua Fragrância de Assinatura Agora Mesmo
+      </h2>
+
+      <p class="text-gray-300 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed">
+        Não deixe sua presença passar despercebida. Clique no botão abaixo e fale agora com o <strong>Filipe Sales</strong> no WhatsApp para garantir o seu frasco com envio seguro.
+      </p>
+
+      <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#" target="_blank" rel="noopener noreferrer" data-msg="Olá Filipe! Quero escolher minha fragrância da Atlântica Natural agora pelo WhatsApp." class="dynamic-wa-btn pulse-whatsapp inline-flex items-center justify-center gap-3 w-full sm:w-auto bg-gradient-to-r from-emerald-600 via-emerald-500 to-green-500 hover:from-emerald-500 hover:to-green-400 text-white font-extrabold px-10 py-5 rounded-full text-base sm:text-lg shadow-2xl transition-all transform hover:scale-105">
+          <i class="fa-brands fa-whatsapp text-3xl"></i>
+          <span>Chamar Filipe no WhatsApp Agora</span>
+        </a>
+      </div>
+
+      <p class="text-[11px] text-gray-500 tracking-wider uppercase pt-2">
+        🔒 Seus dados e seu pedido são tratados com total sigilo e segurança.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-noir-950 border-t border-white/5 py-10 text-center text-xs text-gray-500">
+    <div class="max-w-7xl mx-auto px-4 space-y-4">
+      
+      <div class="font-display tracking-[0.2em] text-lg font-bold text-gold-gradient">
+        FILIPE SALES
+      </div>
+      <p class="text-gray-400 text-xs">
+        Consultor Independente Credenciado Atlântica Natural
+      </p>
+
+      <div class="flex items-center justify-center gap-6 text-gray-400 pt-2">
+        <a href="#hero" class="hover:text-gold-300 transition">Início</a>
+        <a href="#catalogo" class="hover:text-gold-300 transition">Perfumes</a>
+        <a href="#sobre" class="hover:text-gold-300 transition">Consultoria</a>
+        <button onclick="openConfigModal()" class="hover:text-gold-300 transition underline">Configurar Telefone</button>
+      </div>
+
+      <div class="pt-6 border-t border-white/5 text-[11px] text-gray-600">
+        © <span id="current-year"></span> Filipe Sales - Perfumes. Todos os direitos reservados.
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Floating Button with notification bubble -->
+  <div class="fixed bottom-6 right-6 z-50 flex items-center group">
+    <!-- Bubble text tooltip -->
+    <div class="hidden sm:flex items-center mr-3 px-3.5 py-2 rounded-2xl bg-noir-900/90 border border-gold-500/30 text-xs text-white shadow-xl backdrop-blur-md">
+      <span class="w-2 h-2 rounded-full bg-emerald-500 mr-2 animate-ping"></span>
+      <span>Fale com Filipe online</span>
+    </div>
+
+    <!-- Floating Trigger -->
+    <a href="#" target="_blank" rel="noopener noreferrer" data-msg="Olá Filipe! Estou no seu site e gostaria de tirar uma dúvida sobre os perfumes." class="dynamic-wa-btn pulse-whatsapp w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-tr from-emerald-600 to-green-500 text-white flex items-center justify-center shadow-2xl hover:scale-110 transition-transform">
+      <i class="fa-brands fa-whatsapp text-3xl sm:text-4xl"></i>
+    </a>
+  </div>
+
+  <!-- WhatsApp Phone Settings Modal (Allows entering real phone number dynamically) -->
+  <div id="config-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-noir-900 border border-gold-500/40 rounded-2xl max-w-md w-full p-6 shadow-2xl relative text-left">
+      
+      <button onclick="closeConfigModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="flex items-center gap-2.5 text-gold-400 mb-3">
+        <i class="fa-solid fa-sliders text-xl"></i>
+        <h3 class="font-serif text-lg font-bold text-white">Configurar WhatsApp do Filipe</h3>
+      </div>
+
+      <p class="text-xs text-gray-300 mb-4 leading-relaxed">
+        Insira o número do WhatsApp com DDD (somente números, ex: <code>5521975956187</code>). Todos os botões do site serão atualizados instantaneamente para direcionar os clientes ao contato correto!
+      </p>
+
+      <div class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-gray-300 mb-1">Número do WhatsApp:</label>
+          <div class="relative">
+            <input type="text" id="wa-input-phone" placeholder="Ex: 5521975956187" class="w-full bg-noir-950 border border-white/20 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400 font-mono">
+          </div>
+          <span class="text-[10px] text-gray-500 mt-1 block">Padrão com código do país (55) + DDD + Número.</span>
+        </div>
+
+        <div class="flex gap-3 pt-2">
+          <button onclick="saveWhatsAppConfig()" class="flex-1 bg-gradient-to-r from-gold-500 to-gold-400 text-noir-950 font-bold py-2.5 rounded-xl text-xs uppercase tracking-wider hover:brightness-110 transition">
+            Salvar e Atualizar
+          </button>
+          <button onclick="closeConfigModal()" class="px-4 py-2.5 rounded-xl bg-noir-800 text-gray-300 text-xs hover:bg-noir-700 transition">
+            Cancelar
+          </button>
+        </div>
+      </div>
+
+      <!-- Toast notice container -->
+      <div id="modal-toast" class="hidden mt-3 p-2 bg-emerald-500/20 border border-emerald-500/40 rounded-lg text-emerald-300 text-xs text-center font-medium">
+        Número atualizado com sucesso!
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JavaScript: Logic for sizes, dynamic WhatsApp generation and filters -->
+  <script>
+    // Initial / Default WhatsApp Number (stored in localStorage or fallback)
+    const DEFAULT_PHONE = "5521975956187"; // Número oficial homologado do consultor Filipe Sales
+    let storedPhone = localStorage.getItem("filipe_perfumes_whatsapp");
+    if (!storedPhone || storedPhone === "5521999999999") {
+      storedPhone = DEFAULT_PHONE;
+      try { localStorage.setItem("filipe_perfumes_whatsapp", DEFAULT_PHONE); } catch(e) {}
+    }
+    let currentPhone = storedPhone;
+
+    // Perfume size states tracking
+    const perfumeSelectedSizes = {
+      "La Belle": "100ml",
+      "Amore Radiant Gold": "100ml",
+      "Good Woman": "100ml",
+      "Fortune": "100ml",
+      "Imortal": "100ml",
+      "Indomável": "100ml"
+    };
+
+    // Initialize Page
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("current-year").textContent = new Date().getFullYear();
+      document.getElementById("wa-input-phone").value = currentPhone;
+      updateAllWhatsAppLinks();
+    });
+
+    // Helper to format WhatsApp URL
+    function buildWhatsAppUrl(phone, text) {
+      const cleanPhone = phone.replace(/\D/g, "");
+      const encodedMsg = encodeURIComponent(text.trim());
+      return `https://wa.me/${cleanPhone}?text=${encodedMsg}`;
+    }
+
+    // Refresh all static and contextual WhatsApp buttons
+    function updateAllWhatsAppLinks() {
+      const defaultGeneralMsg = "Olá Filipe! Gostaria de uma consultoria olfativa para escolher meu perfume da Atlântica Natural.";
+      
+      document.querySelectorAll(".dynamic-wa-btn").forEach(btn => {
+        const customMsg = btn.getAttribute("data-msg") || defaultGeneralMsg;
+        btn.setAttribute("href", buildWhatsAppUrl(currentPhone, customMsg));
+      });
+    }
+
+    // Size selection handler for cards
+    function selectSize(buttonElement, size) {
+      const card = buttonElement.closest(".perfume-card");
+      if (!card) return;
+
+      const perfumeName = card.getAttribute("data-name");
+      perfumeSelectedSizes[perfumeName] = size;
+
+      // Toggle UI button styles in card
+      const buttons = card.querySelectorAll(".size-btn");
+      buttons.forEach(btn => {
+        if (btn === buttonElement) {
+          btn.className = "size-btn px-2.5 py-1 rounded text-[11px] font-bold bg-gold-500 text-noir-950 border border-gold-400 transition";
+        } else {
+          btn.className = "size-btn px-2.5 py-1 rounded text-[11px] font-bold bg-noir-800 text-gray-300 border border-white/10 hover:border-gold-500/40 transition";
+        }
+      });
+    }
+
+    // Order specific perfume directly to WhatsApp
+    function orderPerfume(perfumeName, triggerElement) {
+      const size = perfumeSelectedSizes[perfumeName] || "100ml";
+      const message = `Olá Filipe! Gostei muito do perfume *${perfumeName}* na versão de *${size}* da Atlântica Natural. Como posso fazer meu pedido?`;
+      
+      const targetUrl = buildWhatsAppUrl(currentPhone, message);
+      window.open(targetUrl, "_blank", "noopener,noreferrer");
+    }
+
+    // Category filter tabs handler
+    function filterCatalog(category) {
+      const tabs = document.querySelectorAll(".cat-tab");
+      tabs.forEach(t => {
+        t.className = "cat-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider transition-all bg-noir-850 text-gray-300 border border-white/10 hover:border-gold-500/50";
+      });
+
+      const activeTab = document.getElementById(`tab-${category}`);
+      if (activeTab) {
+        activeTab.className = "cat-tab active-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider transition-all bg-gold-500 text-noir-950 shadow-lg";
+      }
+
+      const cards = document.querySelectorAll(".perfume-card");
+      cards.forEach(card => {
+        if (category === "all") {
+          card.classList.remove("hidden");
+        } else if (card.classList.contains(category)) {
+          card.classList.remove("hidden");
+        } else {
+          card.classList.add("hidden");
+        }
+      });
+    }
+
+    // Modal controls for changing WhatsApp configuration
+    function openConfigModal() {
+      const modal = document.getElementById("config-modal");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+
+    function closeConfigModal() {
+      const modal = document.getElementById("config-modal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+      document.getElementById("modal-toast").classList.add("hidden");
+    }
+
+    function saveWhatsAppConfig() {
+      const input = document.getElementById("wa-input-phone");
+      const rawValue = input.value.trim();
+      const cleaned = rawValue.replace(/\D/g, "");
+
+      if (cleaned.length < 10) {
+        alertFallback("Por favor, digite um número de WhatsApp válido com DDD.");
+        return;
+      }
+
+      currentPhone = cleaned;
+      localStorage.setItem("filipe_perfumes_whatsapp", cleaned);
+      updateAllWhatsAppLinks();
+
+      const toast = document.getElementById("modal-toast");
+      toast.classList.remove("hidden");
+
+      setTimeout(() => {
+        closeConfigModal();
+      }, 1200);
+    }
+
+    // Simple custom non-blocking notification helper
+    function alertFallback(msg) {
+      const toast = document.getElementById("modal-toast");
+      toast.textContent = msg;
+      toast.classList.remove("hidden");
+      toast.classList.remove("bg-emerald-500/20", "text-emerald-300", "border-emerald-500/40");
+      toast.classList.add("bg-amber-500/20", "text-amber-300", "border-amber-500/40");
+    }
+  </script>
+</body>
+</html>
