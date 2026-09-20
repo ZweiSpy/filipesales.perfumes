@@ -162,9 +162,6 @@
     <p>
       ✨ Atendimento VIP & Consultoria Olfativa no WhatsApp | Frascos de <strong>100ml</strong> e Pocket de <strong>15ml</strong>
     </p>
-    <button onclick="openConfigModal()" title="Configurar número do WhatsApp" class="ml-2 text-gold-400 hover:text-white transition-colors underline text-[11px] opacity-80 hover:opacity-100 flex items-center gap-1">
-      <i class="fa-solid fa-gear"></i> <span class="hidden sm:inline">Ajustar Whats</span>
-    </button>
   </aside>
 
   <!-- Header / Nav -->
@@ -1229,7 +1226,6 @@
           <i class="fa-solid fa-gem text-[10px]"></i> Catálogo Completo (62)
         </a>
         <a href="#sobre" class="hover:text-gold-300 transition">Consultoria</a>
-        <button onclick="openConfigModal()" class="hover:text-gold-300 transition underline">Configurar Telefone</button>
       </div>
 
       <div class="pt-6 border-t border-white/5 text-[11px] text-gray-600">
@@ -1253,60 +1249,10 @@
     </a>
   </div>
 
-  <!-- WhatsApp Phone Settings Modal (Allows entering real phone number dynamically) -->
-  <div id="config-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
-    <div class="bg-noir-900 border border-gold-500/40 rounded-2xl max-w-md w-full p-6 shadow-2xl relative text-left">
-      
-      <button onclick="closeConfigModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-lg">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
-      <div class="flex items-center gap-2.5 text-gold-400 mb-3">
-        <i class="fa-solid fa-sliders text-xl"></i>
-        <h3 class="font-serif text-lg font-bold text-white">Configurar WhatsApp do Filipe</h3>
-      </div>
-
-      <p class="text-xs text-gray-300 mb-4 leading-relaxed">
-        Insira o número do WhatsApp com DDD (somente números, ex: <code>5521975956187</code>). Todos os botões do site serão atualizados instantaneamente para direcionar os clientes ao contato correto!
-      </p>
-
-      <div class="space-y-4">
-        <div>
-          <label class="block text-xs font-semibold text-gray-300 mb-1">Número do WhatsApp:</label>
-          <div class="relative">
-            <input type="text" id="wa-input-phone" placeholder="Ex: 5521975956187" class="w-full bg-noir-950 border border-white/20 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400 font-mono">
-          </div>
-          <span class="text-[10px] text-gray-500 mt-1 block">Padrão com código do país (55) + DDD + Número.</span>
-        </div>
-
-        <div class="flex gap-3 pt-2">
-          <button onclick="saveWhatsAppConfig()" class="flex-1 bg-gradient-to-r from-gold-500 to-gold-400 text-noir-950 font-bold py-2.5 rounded-xl text-xs uppercase tracking-wider hover:brightness-110 transition">
-            Salvar e Atualizar
-          </button>
-          <button onclick="closeConfigModal()" class="px-4 py-2.5 rounded-xl bg-noir-800 text-gray-300 text-xs hover:bg-noir-700 transition">
-            Cancelar
-          </button>
-        </div>
-      </div>
-
-      <!-- Toast notice container -->
-      <div id="modal-toast" class="hidden mt-3 p-2 bg-emerald-500/20 border border-emerald-500/40 rounded-lg text-emerald-300 text-xs text-center font-medium">
-        Número atualizado com sucesso!
-      </div>
-
-    </div>
-  </div>
-
-  <!-- JavaScript: Logic for sizes, dynamic WhatsApp generation and filters -->
+  <!-- JavaScript: Logic for sizes, direct WhatsApp generation and filters -->
   <script>
-    // Initial / Default WhatsApp Number (stored in localStorage or fallback)
-    const DEFAULT_PHONE = "5521975956187"; // Número oficial homologado do consultor Filipe Sales
-    let storedPhone = localStorage.getItem("filipe_perfumes_whatsapp");
-    if (!storedPhone || storedPhone === "5521999999999") {
-      storedPhone = DEFAULT_PHONE;
-      try { localStorage.setItem("filipe_perfumes_whatsapp", DEFAULT_PHONE); } catch(e) {}
-    }
-    let currentPhone = storedPhone;
+    // Número oficial homologado do consultor Filipe Sales (+55 21 97595-6187)
+    const OFFICIAL_PHONE = "5521975956187";
 
     // Perfume size states tracking
     const perfumeSelectedSizes = {
@@ -1321,7 +1267,6 @@
     // Initialize Page
     document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("current-year").textContent = new Date().getFullYear();
-      document.getElementById("wa-input-phone").value = currentPhone;
       updateAllWhatsAppLinks();
     });
 
@@ -1338,7 +1283,7 @@
       
       document.querySelectorAll(".dynamic-wa-btn").forEach(btn => {
         const customMsg = btn.getAttribute("data-msg") || defaultGeneralMsg;
-        btn.setAttribute("href", buildWhatsAppUrl(currentPhone, customMsg));
+        btn.setAttribute("href", buildWhatsAppUrl(OFFICIAL_PHONE, customMsg));
       });
     }
 
@@ -1366,7 +1311,7 @@
       const size = perfumeSelectedSizes[perfumeName] || "100ml";
       const message = `Olá Filipe! Gostei muito do perfume *${perfumeName}* na versão de *${size}* da Atlântica Natural. Como posso fazer meu pedido?`;
       
-      const targetUrl = buildWhatsAppUrl(currentPhone, message);
+      const targetUrl = buildWhatsAppUrl(OFFICIAL_PHONE, message);
       window.open(targetUrl, "_blank", "noopener,noreferrer");
     }
 
@@ -1392,51 +1337,6 @@
           card.classList.add("hidden");
         }
       });
-    }
-
-    // Modal controls for changing WhatsApp configuration
-    function openConfigModal() {
-      const modal = document.getElementById("config-modal");
-      modal.classList.remove("hidden");
-      modal.classList.add("flex");
-    }
-
-    function closeConfigModal() {
-      const modal = document.getElementById("config-modal");
-      modal.classList.add("hidden");
-      modal.classList.remove("flex");
-      document.getElementById("modal-toast").classList.add("hidden");
-    }
-
-    function saveWhatsAppConfig() {
-      const input = document.getElementById("wa-input-phone");
-      const rawValue = input.value.trim();
-      const cleaned = rawValue.replace(/\D/g, "");
-
-      if (cleaned.length < 10) {
-        alertFallback("Por favor, digite um número de WhatsApp válido com DDD.");
-        return;
-      }
-
-      currentPhone = cleaned;
-      localStorage.setItem("filipe_perfumes_whatsapp", cleaned);
-      updateAllWhatsAppLinks();
-
-      const toast = document.getElementById("modal-toast");
-      toast.classList.remove("hidden");
-
-      setTimeout(() => {
-        closeConfigModal();
-      }, 1200);
-    }
-
-    // Simple custom non-blocking notification helper
-    function alertFallback(msg) {
-      const toast = document.getElementById("modal-toast");
-      toast.textContent = msg;
-      toast.classList.remove("hidden");
-      toast.classList.remove("bg-emerald-500/20", "text-emerald-300", "border-emerald-500/40");
-      toast.classList.add("bg-amber-500/20", "text-amber-300", "border-amber-500/40");
     }
   </script>
 </body>

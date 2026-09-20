@@ -321,14 +321,9 @@
   <!-- Scripts -->
   <script src="assets/data/perfumes.js"></script>
   <script>
-    // State Management
-    const DEFAULT_PHONE = "5521975956187";
-    let currentPhone = DEFAULT_PHONE;
-    try {
-      currentPhone = localStorage.getItem("filipe_perfumes_whatsapp") || DEFAULT_PHONE;
-    } catch(e) {
-      currentPhone = DEFAULT_PHONE;
-    }
+    // Official WhatsApp Phone (+55 21 97595-6187)
+    const OFFICIAL_PHONE = "5521975956187";
+    const currentPhone = OFFICIAL_PHONE;
 
     let activeGender = "todos";
     let activeTag = "";

@@ -70,25 +70,24 @@ Os dados abaixo foram fornecidos e confirmados pelo Product Owner para integraç
 
 Antes de cada entrega de código ao PO, o Engenheiro deve validar os seguintes pontos:
 
-### 5.1 Pontos de Contato do WhatsApp (13 Gatilhos Mapeados)
-- [ ] 1. Botão do Top Bar de urgência (ajuste dinâmico)
-- [ ] 2. Botão do Header (`Chamar no WhatsApp`)
-- [ ] 3. Botão principal do Hero (`Escolher Minha Fragrância`)
-- [ ] 4. Link contextual do Teste Olfativo no card lateral do Hero
-- [ ] 5. Card La Belle (mensagem com frasco selecionado: 100ml ou 15ml)
-- [ ] 6. Card Amore Radiant Gold (mensagem com frasco selecionado: 100ml ou 15ml)
-- [ ] 7. Card Good Woman (mensagem com frasco selecionado: 100ml ou 15ml)
-- [ ] 8. Card Fortune (mensagem com frasco selecionado: 100ml ou 15ml)
-- [ ] 9. Card Imortal (mensagem com frasco selecionado: 100ml ou 15ml)
-- [ ] 10. Card Indomável (mensagem com frasco selecionado: 100ml ou 15ml)
-- [ ] 11. Banner de Consulta de Outras Fragrâncias
-- [ ] 12. Botão da seção *"Sobre o Filipe"* (`Falar Diretamente com Filipe Sales`)
-- [ ] 13. Botão do Banner Final Agressivo (`Chamar Filipe no WhatsApp Agora`)
-- [ ] 14. Botão Flutuante persistente no canto inferior direito
+### 5.1 Pontos de Contato do WhatsApp (Gatilhos Mapeados)
+- [ ] 1. Botão do Header (`Chamar no WhatsApp`)
+- [ ] 2. Botão principal do Hero (`Escolher Minha Fragrância`)
+- [ ] 3. Link contextual do Teste Olfativo no card lateral do Hero
+- [ ] 4. Card La Belle (mensagem com frasco selecionado: 100ml ou 15ml)
+- [ ] 5. Card Amore Radiant Gold (mensagem com frasco selecionado: 100ml ou 15ml)
+- [ ] 6. Card Good Woman (mensagem com frasco selecionado: 100ml ou 15ml)
+- [ ] 7. Card Fortune (mensagem com frasco selecionado: 100ml ou 15ml)
+- [ ] 8. Card Imortal (mensagem com frasco selecionado: 100ml ou 15ml)
+- [ ] 9. Card Indomável (mensagem com frasco selecionado: 100ml ou 15ml)
+- [ ] 10. Banner de Convite ao Catálogo Completo (62 Fragrâncias)
+- [ ] 11. Botão da seção *"Sobre o Filipe"* (`Falar Diretamente com Filipe Sales`)
+- [ ] 12. Botão do Banner Final Agressivo (`Chamar Filipe no WhatsApp Agora`)
+- [ ] 13. Botão Flutuante persistente no canto inferior direito
 
 ### 5.2 Interatividade & Responsividade
 - [ ] **Instagram Oficial:** Abre o perfil real em nova guia com `rel="noopener noreferrer"`.
-- [ ] **Modal de WhatsApp:** Engrenagem no topo abre modal, permite troca rápida e atualiza todos os botões em tempo de execução via `localStorage`.
+- [ ] **WhatsApp Homologado Interno:** Número oficial fixo (+55 21 97595-6187) integrado internamente em todos os botões, sem exposição de modal para usuários finais.
 - [ ] **Filtros de Catálogo:** Transição suave entre *Todos*, *Feminino* e *Masculino*.
 - [ ] **FAQ Accordion:** Abertura e fechamento independente de cada pergunta.
 - [ ] **Mobile & Desktop:** Zero scroll horizontal em resoluções de 360px a 1920px.
