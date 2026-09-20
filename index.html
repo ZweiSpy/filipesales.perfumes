@@ -183,8 +183,11 @@
       </a>
 
       <!-- Desktop Links -->
-      <nav class="hidden md:flex items-center space-x-8 text-xs lg:text-sm font-medium tracking-wider uppercase text-gray-300">
-        <a href="#catalogo" class="hover:text-gold-300 transition-colors">Coleções</a>
+      <nav class="hidden md:flex items-center space-x-7 text-xs lg:text-sm font-medium tracking-wider uppercase text-gray-300">
+        <a href="#catalogo" class="hover:text-gold-300 transition-colors">Bestsellers</a>
+        <a href="catalogo.html" class="text-gold-300 hover:text-white transition-colors font-bold flex items-center gap-1.5 border-b border-gold-500/50 pb-0.5">
+          <i class="fa-solid fa-gem text-[10px] text-gold-400"></i> Catálogo (62)
+        </a>
         <a href="#tamanhos" class="hover:text-gold-300 transition-colors">100ml & 15ml</a>
         <a href="#sobre" class="hover:text-gold-300 transition-colors">Sobre Filipe</a>
         <a href="#diferenciais" class="hover:text-gold-300 transition-colors">Diferenciais</a>
@@ -842,16 +845,32 @@
 
       </div>
 
-      <!-- Custom Request Banner -->
-      <div class="mt-12 p-6 rounded-2xl bg-gradient-to-r from-noir-900 via-noir-850 to-noir-900 border border-gold-500/20 text-center flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div class="text-center sm:text-left">
-          <h4 class="font-serif text-lg font-bold text-white">Procurando outro perfume da Atlântica Natural?</h4>
-          <p class="text-xs text-gray-400 mt-1">Como consultor credenciado, o Filipe tem acesso a todo o portfólio oficial.</p>
+      <!-- Exclusive 62-Fragrance Catalog CTA Banner -->
+      <div class="mt-16 p-8 rounded-3xl bg-gradient-to-r from-noir-900 via-noir-850 to-noir-900 border border-gold-500/30 relative overflow-hidden shadow-2xl">
+        <div class="absolute -right-12 -bottom-12 w-64 h-64 bg-gold-500/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+          <div>
+            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/20 text-gold-400 text-[11px] uppercase tracking-wider font-semibold mb-3">
+              <i class="fa-solid fa-gem text-xs"></i> Linha Completa Bortoletto & Atlântica Natural
+            </span>
+            <h4 class="font-serif text-2xl md:text-3xl font-bold text-white tracking-wide">
+              Deseja Explorar Todos os <span class="text-gradient-gold">62 Perfumes</span>?
+            </h4>
+            <p class="text-sm text-gray-300 mt-2 max-w-xl">
+              Descubra todas as 32 fragrâncias femininas e 30 masculinas com referências olfativas de alta perfumaria mundial, filtros por família olfativa e atendimento imediato.
+            </p>
+          </div>
+          <div class="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+            <a href="catalogo.html" class="px-7 py-4 rounded-xl bg-gradient-to-r from-gold-500 via-gold-400 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-noir-950 font-bold text-sm tracking-wider uppercase shadow-xl hover:shadow-gold-500/20 transition transform hover:-translate-y-0.5 flex items-center gap-3">
+              <i class="fa-solid fa-layer-group text-base"></i>
+              <span>Acessar Catálogo Completo (62)</span>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" data-msg="Olá Filipe! Gostaria de consultar uma fragrância específica do catálogo oficial." class="dynamic-wa-btn px-5 py-4 rounded-xl bg-noir-800 hover:bg-noir-750 text-gray-300 border border-white/10 hover:border-gold-500/30 text-xs font-semibold tracking-wide transition flex items-center gap-2">
+              <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
+              <span>Consultar no WhatsApp</span>
+            </a>
+          </div>
         </div>
-        <a href="#" target="_blank" rel="noopener noreferrer" data-msg="Olá Filipe! Gostaria de saber se você tem outro perfume da Atlântica Natural disponível no catálogo." class="dynamic-wa-btn shrink-0 px-6 py-3 rounded-full bg-gold-500/10 hover:bg-gold-500/20 text-gold-300 border border-gold-500/30 text-xs font-semibold tracking-wide transition flex items-center gap-2">
-          <i class="fa-brands fa-whatsapp text-base text-emerald-400"></i>
-          Consultar Outras Fragrâncias
-        </a>
       </div>
 
     </div>
@@ -1203,9 +1222,12 @@
         Consultor Independente Credenciado Atlântica Natural
       </p>
 
-      <div class="flex items-center justify-center gap-6 text-gray-400 pt-2">
+      <div class="flex flex-wrap items-center justify-center gap-6 text-gray-400 pt-2 text-xs">
         <a href="#hero" class="hover:text-gold-300 transition">Início</a>
-        <a href="#catalogo" class="hover:text-gold-300 transition">Perfumes</a>
+        <a href="#catalogo" class="hover:text-gold-300 transition">Bestsellers</a>
+        <a href="catalogo.html" class="text-gold-400 hover:text-white font-medium transition flex items-center gap-1">
+          <i class="fa-solid fa-gem text-[10px]"></i> Catálogo Completo (62)
+        </a>
         <a href="#sobre" class="hover:text-gold-300 transition">Consultoria</a>
         <button onclick="openConfigModal()" class="hover:text-gold-300 transition underline">Configurar Telefone</button>
       </div>

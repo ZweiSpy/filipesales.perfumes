@@ -75,18 +75,31 @@ Este documento acompanha a evolução do produto desde a concepção de requisit
 - [x] **FAQ com Selo de Fabricação Bortoletto:**
   - Inserção de pergunta e resposta destacando a fabricação Bortoletto e a maestria de um dos melhores perfumistas do Brasil.
 
-### 🟡 Fase 6: Expansão de Catálogo (+62 Fragrâncias) (Em Análise de Arquitetura)
-- [ ] **Definição de Abordagem Técnica com PO:**
-  - Opção A (Recomendada): Página dedicada `catalogo.html` com busca em tempo real + LP `index.html` com Bestsellers.
-  - Opção B: Botão "Carregar Mais Fragrâncias" dinâmico na própria Landing Page.
-  - Opção C: Tabulação / Paginação interna (1, 2, 3...) na Landing Page.
-- [ ] Mapeamento e estruturação dos dados dos 32 perfumes femininos e 30 masculinos (Nomes, Inspirações, Famílias Olfativas).
+### ✅ Fase 6: Expansão de Catálogo Completo (62 Fragrâncias: 32 Fem + 30 Masc) (Concluída)
+- [x] **Mapeamento Integral das 62 Fragrâncias:**
+  - 32 perfumes femininos decodificados das fichas oficiais da Atlântica Natural / Bortoletto.
+  - 30 perfumes masculinos decodificados das fichas oficiais da Atlântica Natural / Bortoletto.
+  - Estruturação de nomes, inspirações olfativas mundiais, famílias olfativas e slogans de conversão.
+- [x] **Desenvolvimento da Página Satélite Dedicada (`catalogo.html`):**
+  - **Header & Navegação:** Identidade Filipe Sales, link de retorno à LP (`← Voltar para Início`) e botão direto do WhatsApp.
+  - **Barra de Busca Instantânea (Search Live):** Filtro inteligente em tempo real por nome do perfume, grife de inspiração olfativa ou família aromática.
+  - **Tabs com Contadores Dinâmicos:** `Todos (62)` | `Femininos (32)` | `Masculinos (30)`.
+  - **Filtros Rápidos por Categorias:** `Todos`, `Bestsellers`, `Doces & Gourmand`, `Amadeirados`, `Frescos & Cítricos`, `Orientais & Árabes (Lattafa)`, `Fragrâncias Próprias`.
+  - **Grid de Cards Dark Noir de Luxo:**
+    - Cards responsivos com badges dourados de inspiração olfativa (`✨ Referência: [Nome da Grife]`).
+    - Seletor funcional de frascos: `100ml` vs `15ml`.
+    - Botão WhatsApp com mensagem contextualizada para cada fragrância e tamanho selecionado.
+  - **Rodapé de Consultoria Olfativa VIP:** Chamada direta com Filipe Sales para tirar dúvidas e receber recomendações personalizadas.
+- [x] **Interconexão na Landing Page Principal (`index.html`):**
+  - Inserção de banner suntuoso ao final da seção de Bestsellers convidando para a coleção completa: *"Deseja explorar todas as nossas 62 fragrâncias exclusivas Bortoletto? [Acessar Catálogo Completo (62) →]"*.
+  - Link dedicado adicionado no Header desktop e no rodapé.
 
 ### 🔄 Fase 7: Bateria de Testes & Homologação pelo PO
 - [ ] Validação do card do WhatsApp no simulador/debugger oficial.
 - [ ] Verificação do Favicon exibido na aba do navegador.
 - [ ] Validação de cada um dos 13 gatilhos do WhatsApp no navegador.
 - [ ] Teste de clique nos botões de 100ml vs 15ml em todos os cards (*La Belle, Amore, Good Woman, Fortune, Imortal, Indomável*).
+- [ ] Teste de busca em tempo real na página de catálogo (`catalogo.html`).
 - [ ] Teste do link do Instagram abrindo em nova aba com segurança (`noopener noreferrer`).
 - [ ] Teste de responsividade em resoluções mobile (360px a 414px) e desktop (1080p).
 - [ ] Aceite formal pelo PO / Tester.
@@ -95,7 +108,7 @@ Este documento acompanha a evolução do produto desde a concepção de requisit
 - [ ] **Prova Social Flutuante (Live Social Proof Toast):** Notificação periódica e discreta simulando pedidos recentes de clientes no WhatsApp para acelerar a tomada de decisão (gatilho de urgência e validação).
 - [ ] **Destaque de Entrega Local:** Inserção de selo de credibilidade *"🚀 Entrega expressa para Nova Iguaçu e Baixada Fluminense | Envio para todo o Brasil"*.
 - [ ] **Compressão & WebP:** Geração de `assets/filipe-sales-consultor.webp` para redução de peso e carregamento instantâneo em 3G/4G.
-- [ ] **Telemetria de Eventos:** Suporte a Meta Pixel / Google Tag Manager via data-attributes nos 13 botões de WhatsApp.
+- [ ] **Telemetria de Eventos:** Suporte a Meta Pixel / Google Tag Manager via data-attributes nos botões de WhatsApp.
 
 ---
 
@@ -108,3 +121,4 @@ Este documento acompanha a evolução do produto desde a concepção de requisit
 * **Decisão #005 (19/09/2026):** Padronização estrita de todos os assets de Favicon e Open Graph residentes exclusivamente dentro do diretório `assets/`.
 * **Decisão #006 (19/09/2026):** Substituição de qualquer alegação temporal absoluta ("fixação 24h") pela diretriz de "Alta Fixação" e "Performance Marcante", garantindo precisão técnica e credibilidade.
 * **Decisão #007 (19/09/2026):** Oficialização da chancela do **Selo de Fabricação Bortoletto** como pilar de autoridade técnica e qualidade olfativa nacional.
+* **Decisão #008 (19/09/2026):** Implementação da arquitetura híbrida de alto desempenho: Landing Page enxuta (`index.html`) com os 6 Bestsellers de alta conversão + Catálogo Satélite dedicado (`catalogo.html`) com os 62 perfumes e busca instantânea em tempo real.

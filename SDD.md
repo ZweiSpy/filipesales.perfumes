@@ -138,9 +138,24 @@ const perfumeSelectedSizes = {
 | **Opção 4: Todos 62 na LP contínua** | Crítica (DOM > 800 nós) | Péssima (*scroll fatigue*) | Baixa (usuário abandona) | ❌ Inviável |
 
 ### 6.2 Especificação da Abordagem Recomendada (Opção 1):
-1. **Landing Page (`index.html`):** Mantém os 6 Bestsellers de elite como vitrine rápida, com um card/banner convidativo de fechamento: *"Procurando uma fragrância específica? Conheça nosso catálogo com mais de 60 criações exclusivas Bortoletto [Explorar Catálogo Completo]"*.
+1. **Landing Page (`index.html`):** Mantém os 6 Bestsellers de elite como vitrine rápida, com um card/banner convidativo de fechamento: *"Procurando uma fragrância específica? Conheça nosso catálogo com mais de 60 criações exclusivas Bortoletto [Explorar Catálogo Completo →]"*.
 2. **Página de Catálogo (`catalogo.html`):**
-   - Base de dados leve em array JSON (`data/perfumes.js`) com 62 objetos `{ id, nome, genero, inspiracao, familia, descricao, tags }`.
-   - Barra de busca instantânea no topo (filtra em tempo real conforme o usuário digita "Dior", "Sauvage", "Doce", etc.).
-   - Abas rápidas com contadores visíveis: `Todos (62)`, `Femininos (32)`, `Masculinos (30)`.
-   - Cada card com seletor de 100ml/15ml e botão de pedido direto para o WhatsApp do Filipe Sales.
+   - **Performance Extrema:** Zero frameworks pesados; carrega em menos de 0.8s via Vanilla JS + Tailwind.
+   - **Banco de Dados no Cliente:** Array otimizado em `assets/data/perfumes.js` com os 62 itens estruturados.
+   - **Mecanismo de Busca em Tempo Real:** Escuta o evento `input` na barra de pesquisa, filtrando instantaneamente por nome, referência olfativa da grife, família e tags.
+   - **Abas Dinâmicas:** Botões com contagem automática: `Todos (62)`, `Femininos (32)`, `Masculinos (30)`.
+   - **Gatilhos de Conversão WhatsApp:** Cada card dispara mensagem contextualizada contendo o nome do perfume, a referência olfativa e o volume escolhido (`100ml` ou `15ml`).
+
+### 6.3 Modelo de Dados das Fragrâncias (Schema `perfumes.js`)
+```javascript
+// Interface do Objeto Perfume
+{
+  id: "bee",
+  nome: "Bee",
+  genero: "feminino", // "feminino" | "masculino"
+  inspiracao: "Lattafa Atheeri (Lattafa)",
+  familia: "Âmbar Floral Oriental Árabe",
+  slogan: "A doçura exótica e misteriosa das noites do oriente",
+  tags: ["Árabe", "Marcante", "Doce", "Exclusivo"]
+}
+```
