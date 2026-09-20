@@ -16,8 +16,9 @@ Proporcionar uma vitrine digital imersiva, elegante e de carregamento ultrarráp
 
 ### 1.2 Proposta de Valor
 - **Atendimento Consultivo Olfativo:** Não apenas vender produtos, mas guiar o cliente na escolha do perfume perfeito com base na sua rotina, personalidade e clima.
+- **Selo de Fabricação Bortoletto:** Formulações assinadas por um dos maiores e mais experientes perfumistas do Brasil, empregando essências importadas de altíssima fidelidade e pureza.
 - **Dualidade de Formatos:** Atender tanto ao público que busca imponência e custo-benefício por ml (**100ml para bancada**) quanto ao público corporativo/noturno que exige portabilidade (**Pocket 15ml para o bolso/bolsa**).
-- **Garantia de Autenticidade:** Produtos 100% lacrados de fábrica com procedência direta da Atlântica Natural.
+- **Garantia de Procedência e Alta Fixação:** Perfumes nobres de alta fixação e projeção marcante, lacrados de fábrica com garantia Atlântica Natural.
 
 ---
 
@@ -28,11 +29,11 @@ Proporcionar uma vitrine digital imersiva, elegante e de carregamento ultrarráp
          │ 
          ▼ (Navega na Landing Page de Luxo)
   ┌────────────────────────────────────────────────────────┐
-  │  • Hero com Headline Emocional                         │
+  │  • Hero com Headline Emocional & Métrica de Alta Fixação│
   │  • Apresentação Didática dos Frascos (100ml vs 15ml)   │
-  │  • Catálogo com Filtro por Abas (Todos/Fem/Masc)       │
+  │  • Bestsellers com Inspirações Olfativas & Filtro      │
   │  • Seção de Credencial do Consultor (Foto Real)        │
-  │  • Diferenciais, Depoimentos e FAQ                     │
+  │  • Diferenciais, Depoimentos e FAQ (Selo Bortoletto)   │
   └────────────────────────────────────────────────────────┘
          │
          ▼ (Gatilho Contextual de WhatsApp)
@@ -45,7 +46,8 @@ Proporcionar uma vitrine digital imersiva, elegante e de carregamento ultrarráp
 ### O que o Sistema NÃO Faz:
 1. **Sem Checkout / Pagamentos Nativos:** Não processa cartões nem gera Pix internamente. Elimina carrinhos abandonados e complexidade de infraestrutura.
 2. **Sem Tabela de Preços Aberta:** A negociação de valores, combos promocionais e custos de frete ocorrem com flexibilidade diretamente no WhatsApp.
-3. **Sem Frameworks Pesados:** A arquitetura estática Vanilla previne gargalos de processamento em celulares de entrada.
+3. **Sem Alegações Temporais Irrealistas:** Proibido prometer "fixação 24 horas cravadas"; o posicionamento oficial adota "Alta Fixação" e "Performance Prolongada".
+4. **Sem Frameworks Pesados:** A arquitetura estática Vanilla previne gargalos de processamento em celulares de entrada.
 
 ---
 
@@ -95,15 +97,15 @@ const perfumeSelectedSizes = {
 - **Encoding:** Codificação segura com `encodeURIComponent(text.trim())`.
 - **Output:** `https://wa.me/5521975956187?text=...`
 
-### 4.3 Mapeamento dos Perfumes Homologados
-| Fragrância | Família Olfativa | Gênero | Formatos Disponíveis | Destaque |
-|---|---|:---:|:---:|---|
-| **La Belle** | Floral Frutado Gourmet | Feminino | 100ml / 15ml | Brilho leve e sofisticação |
-| **Amore Radiant Gold** | Âmbar Floral Solar | Feminino | 100ml / 15ml | Luxo solar e envolvente |
-| **Good Woman** | Oriental Floral Misterioso | Feminino | 100ml / 15ml | Sensualidade e alta projeção |
-| **Fortune** | Amadeirado Especiado com Couro | Masculino | 100ml / 15ml | Bestseller, ambição e riqueza |
-| **Imortal** | Aquático Amadeirado Fresco | Masculino | 100ml / 15ml | Vigor, frescor e imponência |
-| **Indomável** | Fougère Aromático com Ambroxan | Masculino | 100ml / 15ml | Liberdade e instinto selvagem |
+### 4.3 Mapeamento dos Perfumes Bestsellers Homologados
+| Fragrância | Inspiração Olfativa | Família Olfativa | Gênero | Formatos | Destaque |
+|---|---|---|:---:|:---:|---|
+| **La Belle** | *La Vie Est Belle* (Lancôme) | Floral Frutado Gourmet | Feminino | 100ml / 15ml | Brilho leve e sofisticação |
+| **Amore Radiant Gold** | *J'adore* (Dior) | Âmbar Floral Solar | Feminino | 100ml / 15ml | Luxo solar e floral nobre |
+| **Good Woman** | *Good Girl* (Carolina Herrera) | Oriental Floral Misterioso | Feminino | 100ml / 15ml | Sensualidade e presença marcante |
+| **Fortune** | *1 Million* (Paco Rabanne) | Amadeirado Especiado com Couro | Masculino | 100ml / 15ml | Bestseller, ambição e poder |
+| **Imortal** | *Invictus* (Paco Rabanne) | Aquático Amadeirado Fresco | Masculino | 100ml / 15ml | Vigor, frescor e imponência |
+| **Indomável** | *Sauvage* (Dior) | Fougère Aromático com Ambroxan | Masculino | 100ml / 15ml | Liberdade e instinto selvagem |
 
 ---
 
@@ -121,3 +123,24 @@ const perfumeSelectedSizes = {
 ### 5.3 Responsividade Multi-Dispositivo
 - **Mobile First:** Adaptação suave de 360px a 767px (layout em coluna única, botões de toque com altura mínima de 44px).
 - **Tablet & Desktop:** Grid responsivo de 2 e 3 colunas entre 768px e 1920px sem quebras de alinhamento.
+
+---
+
+## 6. Arquitetura de Expansão de Catálogo (62 Perfumes: 32 Femininos e 30 Masculinos)
+
+### 6.1 Análise Comparativa de Abordagens
+
+| Abordagem | Impacto em Performance | UX Mobile & Usabilidade | Taxa de Conversão (CRO) | Veredito da Engenharia |
+|---|:---:|:---:|:---:|:---:|
+| **Opção 1: Página Dedicada (`catalogo.html`)** | **Ótima (DOM isolado)** | **Excelente (busca instantânea)** | **Máxima (LP rápida + Catálogo focado)** | **⭐ ALTAMENTE RECOMENDADA** |
+| **Opção 2: "Carregar Mais" no `index.html`** | Média (cresce DOM) | Razoável (scroll longo) | Boa (mantém na LP) | Viável como solução intermediária |
+| **Opção 3: Paginação Numérica (1, 2, 3...)** | Média | Ruim no celular (cliques pequenos) | Média | Desaconselhada para mobile |
+| **Opção 4: Todos 62 na LP contínua** | Crítica (DOM > 800 nós) | Péssima (*scroll fatigue*) | Baixa (usuário abandona) | ❌ Inviável |
+
+### 6.2 Especificação da Abordagem Recomendada (Opção 1):
+1. **Landing Page (`index.html`):** Mantém os 6 Bestsellers de elite como vitrine rápida, com um card/banner convidativo de fechamento: *"Procurando uma fragrância específica? Conheça nosso catálogo com mais de 60 criações exclusivas Bortoletto [Explorar Catálogo Completo]"*.
+2. **Página de Catálogo (`catalogo.html`):**
+   - Base de dados leve em array JSON (`data/perfumes.js`) com 62 objetos `{ id, nome, genero, inspiracao, familia, descricao, tags }`.
+   - Barra de busca instantânea no topo (filtra em tempo real conforme o usuário digita "Dior", "Sauvage", "Doce", etc.).
+   - Abas rápidas com contadores visíveis: `Todos (62)`, `Femininos (32)`, `Masculinos (30)`.
+   - Cada card com seletor de 100ml/15ml e botão de pedido direto para o WhatsApp do Filipe Sales.

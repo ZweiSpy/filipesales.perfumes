@@ -21,8 +21,10 @@ Este documento acompanha a evolução do produto desde a concepção de requisit
 | **Fase 2** | Configuração do Git, repositório remoto, deploy na Vercel (`index.html`) e assets | **CONCLUÍDO** | Antigravity |
 | **Fase 3** | Integração dos dados homologados (WhatsApp oficial, Instagram e foto executiva Opção A) | **CONCLUÍDO** | Antigravity |
 | **Fase 4** | **Identidade & Compartilhamento:** Favicon oficial, Open Graph e Meta Tags de SEO (`assets/`) | **CONCLUÍDO** | Antigravity |
-| **Fase 5** | Execução de testes cruzados de ponta a ponta e homologação formal pelo PO | **AGUARDANDO** | PO (ZweiSpy) |
-| **Fase 6** | Otimizações futuras: Prova social ao vivo, WebP, selo regional e Analytics | **BACKLOG PRIORIZADO** | Antigravity / PO |
+| **Fase 5** | **Refinamento de Conteúdo & Credibilidade:** Remoção de 24h por "Alta Fixação", Inspirações Olfativas e FAQ Selo Bortoletto | **CONCLUÍDO** | Antigravity |
+| **Fase 6** | **Expansão do Catálogo (+62 perfumes):** Implementação da arquitetura homologada (Página Própria vs Carregar Mais) | **EM DEFINIÇÃO DE ARQUITETURA** | Antigravity / PO |
+| **Fase 7** | Execução de testes cruzados de ponta a ponta e homologação formal pelo PO | **AGUARDANDO** | PO (ZweiSpy) |
+| **Fase 8** | Otimizações futuras: Prova social ao vivo, WebP, selo regional e Analytics | **BACKLOG PRIORIZADO** | Antigravity / PO |
 
 ---
 
@@ -65,7 +67,22 @@ Este documento acompanha a evolução do produto desde a concepção de requisit
   - Tag `theme-color: #060607` para imersão Dark Noir na barra de status mobile.
   - Tag `robots: index, follow` para indexação orgânica no Google.
 
-### 🔄 Fase 5: Bateria de Testes & Homologação pelo PO
+### ✅ Fase 5: Refinamento de Conteúdo, Inspirações & Credibilidade (Concluída)
+- [x] **Expurgo de Menções Legadas a "24h":**
+  - Substituição sistemática de "fixação 24h" por "alta fixação" e termos de alta performance olfativa nas meta tags, hero metric, parágrafos e seção de diferenciais.
+- [x] **Inspirações Olfativas nos Cards:**
+  - Inclusão visual elegante de badges e referências olfativas mundiais nos cards dos perfumes (*La Belle, Amore Radiant Gold, Good Woman, Fortune, Imortal, Indomável*).
+- [x] **FAQ com Selo de Fabricação Bortoletto:**
+  - Inserção de pergunta e resposta destacando a fabricação Bortoletto e a maestria de um dos melhores perfumistas do Brasil.
+
+### 🟡 Fase 6: Expansão de Catálogo (+62 Fragrâncias) (Em Análise de Arquitetura)
+- [ ] **Definição de Abordagem Técnica com PO:**
+  - Opção A (Recomendada): Página dedicada `catalogo.html` com busca em tempo real + LP `index.html` com Bestsellers.
+  - Opção B: Botão "Carregar Mais Fragrâncias" dinâmico na própria Landing Page.
+  - Opção C: Tabulação / Paginação interna (1, 2, 3...) na Landing Page.
+- [ ] Mapeamento e estruturação dos dados dos 32 perfumes femininos e 30 masculinos (Nomes, Inspirações, Famílias Olfativas).
+
+### 🔄 Fase 7: Bateria de Testes & Homologação pelo PO
 - [ ] Validação do card do WhatsApp no simulador/debugger oficial.
 - [ ] Verificação do Favicon exibido na aba do navegador.
 - [ ] Validação de cada um dos 13 gatilhos do WhatsApp no navegador.
@@ -74,7 +91,7 @@ Este documento acompanha a evolução do produto desde a concepção de requisit
 - [ ] Teste de responsividade em resoluções mobile (360px a 414px) e desktop (1080p).
 - [ ] Aceite formal pelo PO / Tester.
 
-### 🔮 Fase 6: Backlog Priorizado para Futuros Ciclos
+### 🔮 Fase 8: Backlog Priorizado para Futuros Ciclos
 - [ ] **Prova Social Flutuante (Live Social Proof Toast):** Notificação periódica e discreta simulando pedidos recentes de clientes no WhatsApp para acelerar a tomada de decisão (gatilho de urgência e validação).
 - [ ] **Destaque de Entrega Local:** Inserção de selo de credibilidade *"🚀 Entrega expressa para Nova Iguaçu e Baixada Fluminense | Envio para todo o Brasil"*.
 - [ ] **Compressão & WebP:** Geração de `assets/filipe-sales-consultor.webp` para redução de peso e carregamento instantâneo em 3G/4G.
@@ -89,3 +106,5 @@ Este documento acompanha a evolução do produto desde a concepção de requisit
 * **Decisão #003 (19/09/2026):** Adoção da **Opção A** para o posicionamento da foto executiva real (Seção *"Sobre o Filipe"*), preservando a pureza geométrica do Hero.
 * **Decisão #004 (19/09/2026):** Renomeação do entrypoint de `landing_page_filipe_sales_perfumes.html` para `index.html` para compatibilidade nativa com roteamento raiz da Vercel.
 * **Decisão #005 (19/09/2026):** Padronização estrita de todos os assets de Favicon e Open Graph residentes exclusivamente dentro do diretório `assets/`.
+* **Decisão #006 (19/09/2026):** Substituição de qualquer alegação temporal absoluta ("fixação 24h") pela diretriz de "Alta Fixação" e "Performance Marcante", garantindo precisão técnica e credibilidade.
+* **Decisão #007 (19/09/2026):** Oficialização da chancela do **Selo de Fabricação Bortoletto** como pilar de autoridade técnica e qualidade olfativa nacional.
