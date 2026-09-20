@@ -97,9 +97,9 @@ Este documento acompanha a evolução do produto desde a concepção de requisit
 
 ### ✅ Fase 7: Refinamento de UI, Espaçamento Mínimo & Créditos Institucionais (Concluída)
 - [x] **Crédito Institucional no Rodapé (Zwei Coorporações LTDA):**
-  - Inserção de assinatura elegante e discreta no canto direito do rodapé em `index.html` e `catalogo.html`: *"Desenvolvido por Zwei Coorporações LTDA"*.
-  - Hiperlink seguro no nome da empresa direcionando para `https://zweicorp.com.br` com `target="_blank"` e `rel="noopener noreferrer"`.
-  - Harmonização de contraste com a paleta Dark Noir e alinhamento responsivo (`flex-col sm:flex-row justify-between`).
+  - Inserção de assinatura elegante e discreta centralizada ao final da linha de copyright em `index.html` e `catalogo.html`: *"Desenvolvido por Zwei Coorporações LTDA"*.
+  - Hiperlink seguro no nome da empresa direcionando para `https://zweicoorp.com.br` com `target="_blank"` e `rel="noopener noreferrer"`.
+  - Harmonização de contraste com a paleta Dark Noir e alinhamento centralizado fluido (`text-center leading-relaxed`).
 - [x] **Deslocamento & Separação Visual do Botão no Menu (`index.html`):**
   - Afastamento mínimo garantido de **3 cm** (`margin-left: max(3cm, 48px) !important` e `md:ml-[3cm]`) para o grupo de ação do Header.
   - Ancoragem automática à extrema direita via `ml-auto`.
@@ -112,7 +112,7 @@ Este documento acompanha a evolução do produto desde a concepção de requisit
 - [ ] Teste de clique nos botões de 100ml vs 15ml em todos os cards (*La Belle, Amore, Good Woman, Fortune, Imortal, Indomável*).
 - [ ] Teste de busca em tempo real na página de catálogo (`catalogo.html`).
 - [ ] Teste do link do Instagram abrindo em nova aba com segurança (`noopener noreferrer`).
-- [ ] Teste do link de desenvolvimento Zwei Coorporações LTDA (`https://zweicorp.com.br`) abrindo em nova aba.
+- [ ] Teste do link de desenvolvimento Zwei Coorporações LTDA (`https://zweicoorp.com.br`) abrindo em nova aba.
 - [ ] Teste de responsividade em resoluções mobile (360px a 414px) e desktop (1080p).
 - [ ] Aceite formal pelo PO / Tester.
 
@@ -137,4 +137,4 @@ Este documento acompanha a evolução do produto desde a concepção de requisit
 * **Decisão #009 (20/09/2026):** Remoção completa do modal de configuração do número do WhatsApp da interface pública (Top Bar e Rodapé). O número oficial (+55 21 97595-6187) passa a ser estritamente fixo e interno no código, eliminando qualquer risco de alteração ou exposição de controles para os clientes finais.
 * **Decisão #010 (20/09/2026):** Execução do pacote de correções P1: implementação de Menu Drawer responsivo no mobile para a Landing Page; correção do alinhamento/scroll das tags de filtro no catálogo; compactação da barra sticky mobile; otimização do favicon PNG (redução de 97,6% no peso: de 1,1 MB para 25 KB); eliminação de asset duplicado órfão; adição de dimensões explícitas na foto executiva (prevenção de CLS); expansão da área de toque dos botões de volume; e inclusão de cabeçalhos de segurança HTTP em vercel.json.
 * **Decisão #011 (20/09/2026):** Redimensionamento e reformulação estética do botão de WhatsApp do menu superior (`index.html` e `catalogo.html`). Aplicação do estilo **Esmeralda Joia Nobre (Deep Emerald Luxury)**: pílula compacta `h-10 px-4` com `whitespace-nowrap shrink-0` (eliminando a quebra de linha de "Chamar no"), borda fina acetinada esmeralda, glow sutil e espaçamento responsivo refinado entre os links da barra de navegação (`space-x-4 lg:space-x-6 xl:space-x-7`).
-* **Decisão #012 (20/09/2026):** Implementação do crédito institucional no rodapé direito (*"Desenvolvido por Zwei Coorporações LTDA"* com hiperlink seguro `target="_blank" rel="noopener noreferrer"` para `https://zweicorp.com.br`) preservando a paleta discreta e harmônica do copyright oficial em `index.html` e `catalogo.html`. Ajuste de espaçamento do botão de ação do Header desktop em `index.html`, aplicando classe utilitária e regra CSS de separação mínima de **3 cm** (`margin-left: max(3cm, 48px) !important` e `md:ml-[3cm]`) combinada com `ml-auto` e refinamento do espaçamento de links (`space-x-3 lg:space-x-5 xl:space-x-6 text-[11px] lg:text-xs xl:text-sm`), garantindo distância livre e impedindo qualquer colisão visual com o item *"Dúvidas"* em notebooks e resoluções intermediárias.
+* **Decisão #012 (20/09/2026):** Implementação do crédito institucional centralizado no rodapé (*"Desenvolvido por Zwei Coorporações LTDA"* com hiperlink seguro `target="_blank" rel="noopener noreferrer"` para `https://zweicoorp.com.br`) preservando a paleta discreta e harmônica do copyright oficial em `index.html` e `catalogo.html`. Ajuste de espaçamento do botão de ação do Header desktop em `index.html`, aplicando classe utilitária e regra CSS de separação mínima de **3 cm** (`margin-left: max(3cm, 48px) !important` e `md:ml-[3cm]`) combinada com `ml-auto` e refinamento do espaçamento de links (`space-x-3 lg:space-x-5 xl:space-x-6 text-[11px] lg:text-xs xl:text-sm`), garantindo distância livre e impedindo qualquer colisão visual com o item *"Dúvidas"* em notebooks e resoluções intermediárias.
