@@ -152,6 +152,13 @@
     ::-webkit-scrollbar-thumb:hover {
       background: #D4AF37;
     }
+
+    /* Separação espacial de no mínimo 3cm para o botão de ação do menu no desktop */
+    @media (min-width: 768px) {
+      .header-action-btn-group {
+        margin-left: max(3cm, 48px) !important;
+      }
+    }
   </style>
 </head>
 <body class="bg-noir-950 text-gray-200 font-sans antialiased selection:bg-gold-500 selection:text-noir-950 min-h-screen flex flex-col">
@@ -180,7 +187,7 @@
       </a>
 
       <!-- Desktop Links -->
-      <nav class="hidden md:flex items-center space-x-4 lg:space-x-6 xl:space-x-7 text-xs lg:text-sm font-medium tracking-wider uppercase text-gray-300">
+      <nav class="hidden md:flex items-center space-x-3 lg:space-x-5 xl:space-x-6 text-[11px] lg:text-xs xl:text-sm font-medium tracking-wider uppercase text-gray-300">
         <a href="#catalogo" class="hover:text-gold-300 transition-colors">Bestsellers</a>
         <a href="catalogo.html" class="text-gold-300 hover:text-white transition-colors font-bold flex items-center gap-1.5 border-b border-gold-500/50 pb-0.5">
           <i class="fa-solid fa-gem text-[10px] text-gold-400"></i> Catálogo (62)
@@ -192,7 +199,7 @@
       </nav>
 
       <!-- Action Button & Mobile Hamburger Toggle -->
-      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+      <div class="header-action-btn-group flex items-center gap-2 sm:gap-3 shrink-0 ml-auto md:ml-[3cm]">
         <a href="#" target="_blank" rel="noopener noreferrer" class="dynamic-wa-btn inline-flex items-center justify-center gap-2 h-9 sm:h-10 px-3.5 sm:px-4 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-800 hover:from-emerald-700 hover:via-emerald-600 hover:to-emerald-700 text-white font-bold text-xs uppercase tracking-wider rounded-full border border-emerald-400/30 hover:border-emerald-300/60 shadow-[0_2px_10px_rgba(16,185,129,0.2)] hover:shadow-[0_4px_16px_rgba(16,185,129,0.35)] transition-all duration-300 transform hover:-translate-y-0.5 whitespace-nowrap shrink-0">
           <i class="fa-brands fa-whatsapp text-sm sm:text-base text-emerald-200"></i>
           <span class="hidden sm:inline">Chamar no </span><span>WhatsApp</span>
@@ -1283,8 +1290,13 @@
         </a>
       </div>
 
-      <div class="pt-6 border-t border-white/5 text-[11px] text-gray-600">
-        © <span id="current-year"></span> Filipe Sales - Perfumes. Todos os direitos reservados.
+      <div class="pt-6 border-t border-white/5 text-[11px] text-gray-600 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+        <div>
+          © <span id="current-year"></span> Filipe Sales - Perfumes. Todos os direitos reservados.
+        </div>
+        <div class="text-gray-600">
+          Desenvolvido por <a href="https://zweicorp.com.br" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold-400 transition-colors underline-offset-2 hover:underline">Zwei Coorporações LTDA</a>
+        </div>
       </div>
 
     </div>

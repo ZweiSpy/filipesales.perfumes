@@ -314,7 +314,7 @@ const PERFUMES_CATALOG = [
     descricao: "Tuberosa exuberante com cacau nobre e fava tonka torrada. É bom ser má: uma assinatura noturna que projeta poder e magnetismo.",
     tags: ["Bestseller", "Poderoso", "Noturno", "Sensual"],
     bestseller: true,
-    corAccent: "indigo"
+    corAccent: "blue"
   },
   {
     id: "la-bella",
