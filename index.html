@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR" class="scroll-smooth overflow-x-hidden">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -153,20 +153,20 @@
       background: #D4AF37;
     }
 
-    /* Separação espacial para o botão de ação do menu no desktop */
-    @media (min-width: 1280px) {
+    /* Separação espacial nobre para o botão de ação do menu no desktop largo */
+    @media (min-width: 1400px) {
       .header-action-btn-group {
-        margin-left: max(3cm, 48px) !important;
+        margin-left: 3cm !important;
       }
     }
-    @media (min-width: 768px) and (max-width: 1279px) {
+    @media (min-width: 1024px) and (max-width: 1399px) {
       .header-action-btn-group {
         margin-left: 1.5rem !important;
       }
     }
   </style>
 </head>
-<body class="bg-noir-950 text-gray-200 font-sans antialiased selection:bg-gold-500 selection:text-noir-950 min-h-screen flex flex-col">
+<body class="bg-noir-950 text-gray-200 font-sans antialiased selection:bg-gold-500 selection:text-noir-950 min-h-screen flex flex-col overflow-x-hidden">
 
   <!-- Top Luxury Urgency Bar -->
   <aside aria-label="Aviso de promoção" class="bg-gradient-to-r from-noir-900 via-bronze-700/60 to-noir-900 border-b border-gold-500/20 py-2.5 px-4 text-xs md:text-sm text-center font-medium text-gold-200 tracking-wide flex items-center justify-center gap-2 relative z-50">
@@ -180,19 +180,22 @@
   <header class="sticky top-0 z-40 bg-noir-950/60 backdrop-blur-md border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.4)] transition-all">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
-      <!-- Brand Logo blindada contra quebra de linha -->
-      <a href="#hero" class="flex flex-col group shrink-0 whitespace-nowrap py-1">
-        <span class="font-display tracking-[0.22em] text-lg sm:text-2xl font-black text-gold-gradient group-hover:brightness-110 transition leading-tight">
-          FILIPE SALES
+      <!-- Brand Logo Empilhada (Filipe em cima, Sales abaixo) -->
+      <a href="#hero" class="flex flex-col group shrink-0 py-1 select-none">
+        <span class="font-display tracking-[0.22em] text-lg sm:text-2xl font-black text-gold-gradient group-hover:brightness-110 transition leading-tight block">
+          FILIPE
         </span>
-        <span class="text-[9px] sm:text-[10px] uppercase tracking-[0.34em] text-bronze-300 font-semibold flex items-center gap-1.5 leading-normal mt-0.5">
+        <span class="font-display tracking-[0.22em] text-lg sm:text-2xl font-black text-gold-gradient group-hover:brightness-110 transition leading-tight block -mt-1">
+          SALES
+        </span>
+        <span class="text-[8px] sm:text-[9px] uppercase tracking-[0.22em] text-bronze-300 font-semibold flex items-center gap-1 leading-normal mt-0.5 whitespace-nowrap">
           <span class="inline-block w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
           Perfumes Atlântica Natural
         </span>
       </a>
 
       <!-- Desktop Links Descongestionados -->
-      <nav class="hidden md:flex items-center space-x-2.5 lg:space-x-3.5 xl:space-x-4 text-[11px] lg:text-xs xl:text-sm font-medium tracking-wider uppercase text-gray-300 shrink">
+      <nav class="hidden lg:flex items-center space-x-2 xl:space-x-3.5 2xl:space-x-4 text-[11px] xl:text-xs font-medium tracking-wider uppercase text-gray-300 shrink">
         <a href="#catalogo" class="hover:text-gold-300 transition-colors whitespace-nowrap">Bestsellers</a>
         <a href="catalogo.html" class="text-gold-300 hover:text-white transition-colors font-bold flex items-center gap-1.5 border-b border-gold-500/50 pb-0.5 whitespace-nowrap">
           <i class="fa-solid fa-gem text-[10px] text-gold-400"></i> Catálogo (62)
@@ -207,7 +210,7 @@
       </nav>
 
       <!-- Action Button & Mobile Hamburger Toggle -->
-      <div class="header-action-btn-group flex items-center gap-2 sm:gap-3 shrink-0 ml-auto md:ml-[3cm]">
+      <div class="header-action-btn-group flex items-center gap-2 sm:gap-3 shrink-0 ml-auto">
         <a href="#" target="_blank" rel="noopener noreferrer" class="dynamic-wa-btn inline-flex items-center justify-center gap-2 h-9 sm:h-10 px-3.5 sm:px-4 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-800 hover:from-emerald-700 hover:via-emerald-600 hover:to-emerald-700 text-white font-bold text-xs uppercase tracking-wider rounded-full border border-emerald-400/30 hover:border-emerald-300/60 shadow-[0_2px_10px_rgba(16,185,129,0.2)] hover:shadow-[0_4px_16px_rgba(16,185,129,0.35)] transition-all duration-300 transform hover:-translate-y-0.5 whitespace-nowrap shrink-0">
           <i class="fa-brands fa-whatsapp text-sm sm:text-base text-emerald-200"></i>
           <span class="hidden sm:inline">Chamar no </span><span>WhatsApp</span>
@@ -218,7 +221,7 @@
           id="mobileMenuBtn" 
           onclick="toggleMobileMenu()" 
           aria-label="Menu de navegação" 
-          class="md:hidden w-10 h-10 rounded-xl bg-noir-900 border border-gold-500/30 text-gold-400 hover:text-white hover:border-gold-400 flex items-center justify-center transition"
+          class="lg:hidden w-10 h-10 rounded-xl bg-noir-900 border border-gold-500/30 text-gold-400 hover:text-white hover:border-gold-400 flex items-center justify-center transition"
         >
           <i id="mobileMenuIcon" class="fa-solid fa-bars text-lg"></i>
         </button>
@@ -226,7 +229,7 @@
     </div>
 
     <!-- Mobile Drawer Overlay & Panel -->
-    <div id="mobileMenu" class="hidden md:hidden bg-noir-950/98 border-b border-gold-500/30 px-6 py-5 shadow-2xl transition-all">
+    <div id="mobileMenu" class="hidden lg:hidden bg-noir-950/98 border-b border-gold-500/30 px-6 py-5 shadow-2xl transition-all">
       <div class="flex flex-col space-y-3.5 text-xs font-semibold tracking-wider uppercase">
         <a href="#hero" onclick="closeMobileMenu()" class="text-gray-300 hover:text-gold-300 py-2 border-b border-white/5 flex items-center justify-between">
           <span>Início</span>
@@ -1463,7 +1466,7 @@
 
     // Close mobile menu automatically on screen rotation/resize
     window.addEventListener("resize", () => {
-      if (window.innerWidth >= 768) {
+      if (window.innerWidth >= 1024) {
         closeMobileMenu();
       }
     });

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR" class="scroll-smooth overflow-x-hidden">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -103,7 +103,7 @@
     ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
   </style>
 </head>
-<body class="bg-noir-950 text-slate-200 antialiased selection:bg-gold-500 selection:text-noir-950 min-h-screen flex flex-col">
+<body class="bg-noir-950 text-slate-200 antialiased selection:bg-gold-500 selection:text-noir-950 min-h-screen flex flex-col overflow-x-hidden">
 
   <!-- Top Notification Bar -->
   <aside class="bg-gradient-to-r from-noir-900 via-gold-600/30 to-noir-900 border-b border-gold-500/30 text-center py-2 px-4 text-[11px] sm:text-xs text-gold-200 font-medium tracking-wide">
@@ -125,12 +125,17 @@
         <span class="sm:hidden">Início</span>
       </a>
 
-      <!-- Brand Logo blindada -->
-      <div class="text-center shrink-0 whitespace-nowrap py-1">
-        <a href="index.html" class="font-display tracking-[0.2em] text-base sm:text-2xl font-black text-gold-gradient block leading-tight">
-          FILIPE SALES
+      <!-- Brand Logo Empilhada (Filipe em cima, Sales abaixo) -->
+      <div class="text-center shrink-0 py-1 select-none">
+        <a href="index.html" class="flex flex-col items-center group">
+          <span class="font-display tracking-[0.2em] text-sm sm:text-xl font-black text-gold-gradient block leading-tight group-hover:brightness-110 transition">
+            FILIPE
+          </span>
+          <span class="font-display tracking-[0.2em] text-sm sm:text-xl font-black text-gold-gradient block leading-tight -mt-1 group-hover:brightness-110 transition">
+            SALES
+          </span>
         </a>
-        <span class="text-[8px] sm:text-[10px] uppercase tracking-widest text-gray-400 block font-light mt-0.5">
+        <span class="text-[8px] sm:text-[10px] uppercase tracking-widest text-gray-400 block font-light mt-0.5 whitespace-nowrap">
           Catálogo Oficial • Linha Bortoletto
         </span>
       </div>
