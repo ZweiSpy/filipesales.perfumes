@@ -24,8 +24,9 @@ Este documento acompanha a evolução do produto desde a concepção de requisit
 | **Fase 5** | **Refinamento de Conteúdo & Credibilidade:** Remoção de 24h por "Alta Fixação", Inspirações Olfativas e FAQ Selo Bortoletto | **CONCLUÍDO** | Antigravity |
 | **Fase 6** | **Expansão do Catálogo (+62 perfumes):** Implementação da arquitetura homologada (Página Satélite Dedicada `catalogo.html` + Live Search) | **CONCLUÍDO** | Antigravity / PO |
 | **Fase 7** | **Refinamento de UI & Créditos:** Separação do Menu (>=3cm) e Rodapé Zwei Coorporações LTDA | **CONCLUÍDO** | Antigravity / PO |
-| **Fase 8** | Execução de testes cruzados de ponta a ponta e homologação formal pelo PO | **EM HOMOLOGAÇÃO** | PO (ZweiSpy) |
-| **Fase 9** | Otimizações futuras: Prova social ao vivo, WebP, selo regional e Analytics | **BACKLOG PRIORIZADO** | Antigravity / PO |
+| **Fase 8** | **Quiz Olfativo Interativo ("Qual perfume combina com você?"):** 3 perguntas oficiais do PDF, motor de perfil olfativo, recomendação TOP 3 de `perfumes.js`, persistência local e WhatsApp CTA | **CONCLUÍDO** | Antigravity / PO |
+| **Fase 9** | Execução de testes cruzados de ponta a ponta e homologação formal pelo PO | **EM HOMOLOGAÇÃO** | PO (ZweiSpy) |
+| **Fase 10** | Otimizações futuras: Prova social ao vivo, WebP, selo regional e Analytics | **BACKLOG PRIORIZADO** | Antigravity / PO |
 
 ---
 
@@ -105,18 +106,28 @@ Este documento acompanha a evolução do produto desde a concepção de requisit
   - Ancoragem automática à extrema direita via `ml-auto`.
   - Otimização responsiva dos links de navegação (`space-x-3 lg:space-x-5 xl:space-x-6 text-[11px] lg:text-xs xl:text-sm`) eliminando proximidade e sobreposição com o botão *"Dúvidas"*.
 
-### 🔄 Fase 8: Bateria de Testes & Homologação pelo PO
+### ✅ Fase 8: Quiz Olfativo Interativo ("Qual perfume combina com você?") (Concluída)
+- [x] **Fidelidade ao Guia Oficial em PDF:** Implementação estrita das 3 perguntas (A, B, C, D) sem inflar etapas e com os 4 perfis olfativos previstos (Fresco/Limpo, Doce/Envolvente, Amadeirado/Elegante, Floral/Delicado).
+- [x] **Motor de Recomendação TOP 3:** Mapeamento dinâmico e seguro com as 62 fragrâncias oficiais catalogadas em `assets/data/perfumes.js`.
+- [x] **Tratamento Elegante de Empates:** Resolução de empates e perfis híbridos conforme orientações do guia oficial, cobrindo as 64 combinações possíveis sem falhas de execução.
+- [x] **Persistência de Estado (localStorage):** Armazenamento em `filipesales_quiz_result` com suporte a recarregamento automático e opção de refazer teste a qualquer momento.
+- [x] **Conversão Contextual no WhatsApp:** Botão de pedido em cada um dos 3 perfumes sugeridos com texto formatado contendo o perfil apurado, o perfume selecionado e o frasco desejado (100ml ou 15ml).
+- [x] **Dicas do Especialista (Página 2 do PDF):** Acordeão expansível com pirâmide olfativa (Saída, Coração, Fundo) e dicas práticas de aplicação e conservação.
+- [x] **Gatilhos de Abertura:** Integrado no menu desktop (`Quiz NOVO`), gaveta mobile, card lateral do Hero e banner exclusivo na seção de catálogo em `index.html`, além de banner de acionamento em `catalogo.html`.
+
+### 🔄 Fase 9: Bateria de Testes & Homologação pelo PO
 - [ ] Validação do card do WhatsApp no simulador/debugger oficial.
 - [ ] Verificação do Favicon exibido na aba do navegador.
 - [ ] Validação de cada um dos 13 gatilhos do WhatsApp no navegador.
 - [ ] Teste de clique nos botões de 100ml vs 15ml em todos os cards (*La Belle, Amore, Good Woman, Fortune, Imortal, Indomável*).
 - [ ] Teste de busca em tempo real na página de catálogo (`catalogo.html`).
+- [ ] Teste do Quiz Olfativo (fluxo de perguntas, recomendação TOP 3, seletor de 100ml/15ml e link de WhatsApp).
 - [ ] Teste do link do Instagram abrindo em nova aba com segurança (`noopener noreferrer`).
 - [ ] Teste do link de desenvolvimento Zwei Coorporações LTDA (`https://zweicoorp.com.br`) abrindo em nova aba.
 - [ ] Teste de responsividade em resoluções mobile (360px a 414px) e desktop (1080p).
 - [ ] Aceite formal pelo PO / Tester.
 
-### 🔮 Fase 9: Backlog Priorizado para Futuros Ciclos
+### 🔮 Fase 10: Backlog Priorizado para Futuros Ciclos
 - [ ] **Prova Social Flutuante (Live Social Proof Toast):** Notificação periódica e discreta simulando pedidos recentes de clientes no WhatsApp para acelerar a tomada de decisão (gatilho de urgência e validação).
 - [ ] **Destaque de Entrega Local:** Inserção de selo de credibilidade *"🚀 Entrega expressa para Nova Iguaçu e Baixada Fluminense | Envio para todo o Brasil"*.
 - [ ] **Compressão & WebP:** Geração de `assets/filipe-sales-consultor.webp` para redução de peso e carregamento instantâneo em 3G/4G.
@@ -138,3 +149,4 @@ Este documento acompanha a evolução do produto desde a concepção de requisit
 * **Decisão #010 (20/09/2026):** Execução do pacote de correções P1: implementação de Menu Drawer responsivo no mobile para a Landing Page; correção do alinhamento/scroll das tags de filtro no catálogo; compactação da barra sticky mobile; otimização do favicon PNG (redução de 97,6% no peso: de 1,1 MB para 25 KB); eliminação de asset duplicado órfão; adição de dimensões explícitas na foto executiva (prevenção de CLS); expansão da área de toque dos botões de volume; e inclusão de cabeçalhos de segurança HTTP em vercel.json.
 * **Decisão #011 (20/09/2026):** Redimensionamento e reformulação estética do botão de WhatsApp do menu superior (`index.html` e `catalogo.html`). Aplicação do estilo **Esmeralda Joia Nobre (Deep Emerald Luxury)**: pílula compacta `h-10 px-4` com `whitespace-nowrap shrink-0` (eliminando a quebra de linha de "Chamar no"), borda fina acetinada esmeralda, glow sutil e espaçamento responsivo refinado entre os links da barra de navegação (`space-x-4 lg:space-x-6 xl:space-x-7`).
 * **Decisão #012 (20/09/2026):** Implementação do crédito institucional centralizado no rodapé (*"Desenvolvido por Zwei Coorporações LTDA"* com hiperlink seguro `target="_blank" rel="noopener noreferrer"` para `https://zweicoorp.com.br`) preservando a paleta discreta e harmônica do copyright oficial em `index.html` e `catalogo.html`. Ajuste de espaçamento do botão de ação do Header desktop em `index.html`, aplicando classe utilitária e regra CSS de separação mínima de **3 cm** (`margin-left: max(3cm, 48px) !important` e `md:ml-[3cm]`) combinada com `ml-auto` e refinamento do espaçamento de links (`space-x-3 lg:space-x-5 xl:space-x-6 text-[11px] lg:text-xs xl:text-sm`), garantindo distância livre e impedindo qualquer colisão visual com o item *"Dúvidas"* em notebooks e resoluções intermediárias.
+* **Decisão #013 (02/10/2026):** Implementação do Quiz Olfativo Interativo baseado estritamente no guia oficial em PDF *"Qual perfume combina com você?"*. Arquitetura 100% Vanilla JS (`assets/js/quiz.js`), modal Dark Glassmorphism auto-contido, 3 perguntas oficiais (A, B, C, D), resolução precisa de empates e perfis híbridos, recomendação automática do TOP 3 fragrances oficiais de `perfumes.js`, seletor de volume (100ml / 15ml), persistência de resultado no `localStorage` (`filipesales_quiz_result`) e conversão direta no WhatsApp com mensagem personalizada para o consultor Filipe Sales.

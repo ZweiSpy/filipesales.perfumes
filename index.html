@@ -187,10 +187,13 @@
       </a>
 
       <!-- Desktop Links -->
-      <nav class="hidden md:flex items-center space-x-3 lg:space-x-5 xl:space-x-6 text-[11px] lg:text-xs xl:text-sm font-medium tracking-wider uppercase text-gray-300">
+      <nav class="hidden md:flex items-center space-x-3 lg:space-x-4 xl:space-x-5 text-[11px] lg:text-xs xl:text-sm font-medium tracking-wider uppercase text-gray-300">
         <a href="#catalogo" class="hover:text-gold-300 transition-colors">Bestsellers</a>
         <a href="catalogo.html" class="text-gold-300 hover:text-white transition-colors font-bold flex items-center gap-1.5 border-b border-gold-500/50 pb-0.5">
           <i class="fa-solid fa-gem text-[10px] text-gold-400"></i> Catálogo (62)
+        </a>
+        <a href="#quiz" onclick="window.FilipeQuiz.open(event)" class="text-gold-400 hover:text-gold-200 transition-colors font-semibold flex items-center gap-1 cursor-pointer">
+          <i class="fa-solid fa-wand-magic-sparkles text-[10px]"></i> Quiz <span class="text-[9px] bg-gold-500 text-noir-950 px-1.5 py-0.5 rounded font-black tracking-normal">NOVO</span>
         </a>
         <a href="#tamanhos" class="hover:text-gold-300 transition-colors">100ml & 15ml</a>
         <a href="#sobre" class="hover:text-gold-300 transition-colors">Sobre Filipe</a>
@@ -233,6 +236,12 @@
             <i class="fa-solid fa-gem text-gold-400 text-xs"></i> Catálogo Completo (62)
           </span>
           <span class="text-[9px] bg-gold-500 text-noir-950 px-2 py-0.5 rounded font-black tracking-normal">Ver Todos</span>
+        </a>
+        <a href="#quiz" onclick="closeMobileMenu(); window.FilipeQuiz.open(event)" class="py-2.5 px-3.5 rounded-xl bg-gradient-to-r from-gold-500/20 via-gold-500/10 to-transparent border border-gold-500/40 text-gold-300 hover:text-white font-bold flex items-center justify-between">
+          <span class="flex items-center gap-2">
+            <i class="fa-solid fa-wand-magic-sparkles text-gold-400 text-xs"></i> Teste Olfativo (1 min)
+          </span>
+          <span class="text-[9px] bg-gold-500 text-noir-950 px-2 py-0.5 rounded font-black tracking-normal">NOVO</span>
         </a>
         <a href="#tamanhos" onclick="closeMobileMenu()" class="text-gray-300 hover:text-gold-300 py-2 border-b border-white/5 flex items-center justify-between">
           <span>Frascos 100ml & 15ml</span>
@@ -376,9 +385,9 @@
               <!-- Quick CTA inside box -->
               <div class="bg-noir-950/70 rounded-xl p-3 text-center border border-white/5 space-y-1">
                 <p class="text-xs text-gray-300">Não sabe qual perfume combina com você?</p>
-                <a href="#" target="_blank" rel="noopener noreferrer" data-msg="Olá Filipe! Preciso de ajuda para escolher o perfume ideal para o meu estilo." class="dynamic-wa-btn text-gold-400 hover:text-gold-300 font-semibold text-xs flex items-center justify-center gap-1.5 transition">
-                  Fazer teste olfativo gratuito <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                </a>
+                <button type="button" onclick="window.FilipeQuiz.open(event)" class="w-full text-gold-400 hover:text-gold-300 font-semibold text-xs flex items-center justify-center gap-1.5 transition py-1 cursor-pointer">
+                  <i class="fa-solid fa-wand-magic-sparkles text-[11px]"></i> Fazer teste olfativo gratuito <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                </button>
               </div>
 
             </div>
@@ -469,6 +478,27 @@
         <p class="text-gray-400 text-sm sm:text-base mt-3">
           Escolha abaixo a fragrância e o tamanho desejado (100ml ou 15ml) para solicitar diretamente ao Filipe.
         </p>
+      </div>
+
+      <!-- Banner / Callout do Quiz Olfativo -->
+      <div class="mb-10 max-w-4xl mx-auto p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-noir-900 via-noir-850 to-noir-900 border border-gold-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
+        <div class="flex items-center gap-3.5 text-center sm:text-left">
+          <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-400 flex items-center justify-center shrink-0 text-xl">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 justify-center sm:justify-start">
+              <span class="text-[10px] font-bold uppercase tracking-widest text-gold-400">Guia Rápido Oficial</span>
+              <span class="text-[9px] bg-gold-500 text-noir-950 font-black px-1.5 py-0.5 rounded">1 MINUTO</span>
+            </div>
+            <h3 class="font-serif text-base sm:text-lg font-bold text-white">Qual perfume combina mais com você?</h3>
+            <p class="text-xs text-gray-400">Descubra seu perfil olfativo e receba a recomendação do TOP 3 perfeito para a sua pele.</p>
+          </div>
+        </div>
+        <button type="button" onclick="window.FilipeQuiz.open(event)" class="shrink-0 px-5 py-2.5 rounded-full bg-gradient-to-r from-gold-500 via-amber-400 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-noir-950 font-bold text-xs uppercase tracking-wider shadow-lg hover:shadow-gold-500/25 transition transform hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer">
+          <i class="fa-solid fa-sparkles text-xs"></i>
+          <span>Fazer Quiz Agora</span>
+        </button>
       </div>
 
       <!-- Filter Tabs -->
@@ -1310,6 +1340,10 @@
       <i class="fa-brands fa-whatsapp text-3xl sm:text-4xl"></i>
     </a>
   </div>
+
+  <!-- Catálogo de Perfumes e Quiz Olfativo Interativo -->
+  <script src="assets/data/perfumes.js"></script>
+  <script src="assets/js/quiz.js"></script>
 
   <!-- JavaScript: Logic for sizes, direct WhatsApp generation and filters -->
   <script>

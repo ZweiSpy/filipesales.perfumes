@@ -159,3 +159,42 @@ const perfumeSelectedSizes = {
   tags: ["Árabe", "Marcante", "Doce", "Exclusivo"]
 }
 ```
+
+---
+
+## 7. Arquitetura do Quiz Olfativo Interativo ("Qual perfume combina com você?")
+
+### 7.1 Máquina de Estados do Quiz (`assets/js/quiz.js`)
+O quiz opera como uma máquina de estados finitos (FSM) autocontida, com isolamento de escopo via IIFE:
+
+```
+[ Estado Inicial: Step 1 ]
+         │ (Seleção de Opção A, B, C ou D)
+         ▼
+  [ Step 2: Momento Ideal ]
+         │ (Seleção de Opção A, B, C ou D)
+         ▼
+  [ Step 3: Como Quer Ser Lembrado(a) ]
+         │ (Seleção de Opção A, B, C ou D)
+         ▼
+[ Motor de Cálculo de Votos & Empates ]
+         │
+         ├─► [ Salva em localStorage: filipesales_quiz_result ]
+         ▼
+[ Tela de Resultado: Perfil + TOP 3 do Catálogo ]
+         │
+         ├─► [ Seletor de Frasco: 100ml ou 15ml ]
+         └─► [ Conversão Direta no WhatsApp com Mensagem Parametrizada ]
+```
+
+### 7.2 Mapeamento de Perfis & TOP 3 do Catálogo Oficial
+- **Perfil A (Fresco e Limpo):** *Indomável* (Sauvage), *Imortal* (Invictus), *Aqua For Men* (Acqua Di Giò).
+- **Perfil B (Doce e Envolvente):** *Bee* (Lattafa Atheeri), *Bali* (Sabah Al Ward), *Good Woman* (Good Girl).
+- **Perfil C (Amadeirado e Elegante):** *Fortune* (1 Million), *Champion* (Azzaro), *Zeus (Polo)* (Polo Green).
+- **Perfil D (Floral e Delicado):** *Loved* (Delina), *Athena* (Olympéa), *Amore* (J'adore).
+- **Casos de Empate:** Resolução automática em perfis híbridos dedicados (A-C, B-D, A-B, A-D, B-C, C-D) ou combinação harmônica dos expoentes no caso de 3 votos divergentes, garantindo 100% de estabilidade nas 64 combinações possíveis.
+
+### 7.3 Persistência & Resiliência
+- **Armazenamento:** `localStorage.getItem("filipesales_quiz_result")` encapsulado em bloco `try/catch`.
+- **Restauração Inteligente:** Se o usuário já concluiu o teste anteriormente, o resultado é carregado com opção de refazer teste a qualquer momento.
+

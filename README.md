@@ -10,9 +10,10 @@ O objetivo primordial desta aplicação é proporcionar uma experiência visual 
 
 ### 🌟 Destaques Principais
 - **Design de Luxo:** Paleta sofisticada *Noir, Ouro Metálico, Bronze e Esmeralda*, tipografia clássica (*Cinzel*, *Playfair Display* e *Montserrat*) e micro-animações de brilho metálico.
+- **Quiz Olfativo Interativo ("Qual perfume combina com você?"):** Experiência gamificada de 1 minuto baseada no guia oficial, diagnosticando a família olfativa do cliente e recomendando o TOP 3 do catálogo com link direto para pedido no WhatsApp.
+- **Catálogo Oficial Completo (62 Fragrâncias):** Página satélite dedicada (`catalogo.html`) com busca instantânea em tempo real e filtros por família e gênero (32 femininos e 30 masculinos).
 - **Seleção Dinâmica de Frascos:** Suporte em tempo real para escolha entre o frasco de **100ml** (imponência de bancada) e o pocket de **15ml** (praticidade e portabilidade).
-- **Roteamento Inteligente no WhatsApp:** Mais de 13 pontos de contato com mensagens contextuais customizadas para cada perfume e intenção do cliente.
-- **Painel Rápido de Configuração:** Modal integrado que permite atualizar o telefone oficial em tempo de execução com persistência via `localStorage`.
+- **Roteamento Inteligente no WhatsApp:** Mais de 13 pontos de contato com mensagens contextuais customizadas para cada perfume e intenção do cliente (+55 21 97595-6187).
 - **Zero Dependências Pesadas:** Desenvolvido em Vanilla HTML5, Tailwind CSS utilitário, CSS modular e JavaScript puro para carregamento instantâneo (First Contentful Paint ultraveloz).
 
 ---
@@ -32,14 +33,20 @@ Este repositório adota a metodologia **Spec-Driven Development (SDD)** e govern
 ```plaintext
 filipesales.perfumes/
 ├── assets/
+│   ├── data/
+│   │   └── perfumes.js               # Catálogo com as 62 fragrâncias oficiais
+│   ├── js/
+│   │   └── quiz.js                   # Módulo do Quiz Olfativo e motor de recomendação
 │   ├── filipe-sales-consultor.jpeg   # Retrato executivo oficial de estúdio
-│   └── ...                           # Mídias e fotos adicionais homologadas
+│   ├── favicon.png / favicon.svg     # Ícones da aplicação em alta definição
+│   └── Open-graph.png                # Card de pré-visualização para redes sociais e WhatsApp
 ├── AGENTS.md                         # Matriz RACI e governança do projeto
 ├── PLAN.md                           # Roadmap de planejamento e execução
 ├── SDD.md                            # Software Design Document (Especificação Técnica)
 ├── README.md                         # Documentação central do repositório
-├── .gitignore                        # Filtros de arquivos temporários e de ambiente
-└── index.html                        # Aplicação principal (Landing Page de Entrada)
+├── catalogo.html                     # Catálogo completo com 62 fragrâncias e live search
+├── index.html                        # Aplicação principal (Landing Page de Alta Conversão)
+└── vercel.json                       # Configurações de headers e deploy na Vercel
 ```
 
 ---
