@@ -363,7 +363,7 @@
           <button 
             type="button" 
             onclick="window.FilipeQuiz.close()" 
-            aria-label="Fechar Quiz" 
+            aria-label="Fechar Guia Olfativo" 
             class="absolute top-4 right-4 sm:top-6 sm:right-6 w-9 h-9 rounded-full bg-noir-800 border border-white/10 hover:border-gold-400 text-gray-400 hover:text-white flex items-center justify-center transition z-10"
           >
             <i class="fa-solid fa-xmark text-sm"></i>
@@ -374,7 +374,7 @@
             <div class="flex items-center justify-between mb-2">
               <span class="text-[10px] sm:text-xs uppercase font-bold tracking-[0.2em] text-gold-400 flex items-center gap-1.5">
                 <i class="fa-solid fa-wand-magic-sparkles text-gold-500"></i>
-                <span id="quizBadgeTitle">Quiz Olfativo Oficial</span>
+                <span id="quizBadgeTitle">Descubra seu Perfume • Guia Oficial</span>
               </span>
               <span id="quizStepIndicator" class="text-xs text-gray-400 font-medium">Passo 1 de 3</span>
             </div>
@@ -523,7 +523,7 @@
           <div class="grid gap-3.5 sm:grid-cols-3">
             ${res.perfumes.map((perfume, idx) => {
               const currentSize = state.selectedSizes[perfume.id] || "100ml";
-              const waText = `Olá Filipe! Acabei de fazer o Quiz Olfativo no seu site e meu perfil deu *${prof.nome}* (${prof.familia}). Meu match número #${idx + 1} foi o perfume *${perfume.nome}* (referência: ${perfume.inspiracao}) no frasco de *${currentSize}*. Gostaria de saber mais e pedir o meu!`;
+              const waText = `Olá Filipe! Fiz o teste *Descubra seu Perfume* no seu site e meu perfil deu *${prof.nome}* (${prof.familia}). Meu match número #${idx + 1} foi o perfume *${perfume.nome}* (referência: ${perfume.inspiracao}) no frasco de *${currentSize}*. Gostaria de saber mais e pedir o meu!`;
               const waUrl = buildWhatsAppUrl(waText);
 
               return `
