@@ -153,15 +153,15 @@
       background: #D4AF37;
     }
 
-    /* Separação espacial nobre para o botão de ação do menu no desktop largo */
+    /* Separação espacial nobre e segura para o botão de ação do menu */
     @media (min-width: 1400px) {
       .header-action-btn-group {
-        margin-left: 3cm !important;
+        margin-left: 2rem !important;
       }
     }
     @media (min-width: 1024px) and (max-width: 1399px) {
       .header-action-btn-group {
-        margin-left: 1.5rem !important;
+        margin-left: 1.25rem !important;
       }
     }
   </style>
@@ -178,7 +178,7 @@
 
   <!-- Header / Nav com Efeito Fantasma (60% translúcido) e Dark Glassmorphism -->
   <header class="sticky top-0 z-40 bg-noir-950/60 backdrop-blur-md border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.4)] transition-all">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
       
       <!-- Brand Logo Empilhada (Filipe em cima, Sales abaixo) -->
       <a href="#hero" class="flex flex-col group shrink-0 py-1 select-none">
@@ -211,9 +211,9 @@
 
       <!-- Action Button & Mobile Hamburger Toggle -->
       <div class="header-action-btn-group flex items-center gap-2 sm:gap-3 shrink-0 ml-auto">
-        <a href="#" target="_blank" rel="noopener noreferrer" class="dynamic-wa-btn inline-flex items-center justify-center gap-2 h-9 sm:h-10 px-3.5 sm:px-4 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-800 hover:from-emerald-700 hover:via-emerald-600 hover:to-emerald-700 text-white font-bold text-xs uppercase tracking-wider rounded-full border border-emerald-400/30 hover:border-emerald-300/60 shadow-[0_2px_10px_rgba(16,185,129,0.2)] hover:shadow-[0_4px_16px_rgba(16,185,129,0.35)] transition-all duration-300 transform hover:-translate-y-0.5 whitespace-nowrap shrink-0">
+        <a href="#" target="_blank" rel="noopener noreferrer" class="dynamic-wa-btn inline-flex items-center justify-center gap-1.5 sm:gap-2 h-9 px-3 sm:px-3.5 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-800 hover:from-emerald-700 hover:via-emerald-600 hover:to-emerald-700 text-white font-bold text-xs uppercase tracking-wide rounded-full border border-emerald-400/30 hover:border-emerald-300/60 shadow-[0_2px_10px_rgba(16,185,129,0.2)] hover:shadow-[0_4px_16px_rgba(16,185,129,0.35)] transition-all duration-300 transform hover:-translate-y-0.5 whitespace-nowrap shrink-0">
           <i class="fa-brands fa-whatsapp text-sm sm:text-base text-emerald-200"></i>
-          <span class="hidden sm:inline">Chamar no </span><span>WhatsApp</span>
+          <span class="hidden xl:inline">Chamar no </span><span>WhatsApp</span>
         </a>
 
         <!-- Mobile Menu Hamburger Button -->
